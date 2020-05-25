@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'chrisbra/colorizer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

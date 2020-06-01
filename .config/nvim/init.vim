@@ -38,6 +38,10 @@ set shiftwidth=4
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set clipboard+=unnamedplus
+
+" Replace all is aliased to S
+nnoremap S :%s//g<Left><Left>
 
 " syntastic settings
 let g:syntastic_always_populate_loc_list = 1

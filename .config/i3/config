@@ -170,7 +170,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 assign [class = "Alacritty"] $ws1
 assign [class = "Vivaldi-stable"] $ws2
 assign [class = "Nautilus"] $ws3
-assign [class = "Spotify"] $ws4
+assign [class = "Clementine"] $ws4
 
 #-------------------------------------------------------------------------
 

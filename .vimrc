@@ -88,6 +88,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " Nerdtree Settings
 
 map <leader>n :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
 " Automatically start nerdtree if no file is opened
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif

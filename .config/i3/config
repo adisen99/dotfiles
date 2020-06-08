@@ -52,15 +52,25 @@ bindsym $mod+Return exec --no-startup-id alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#1D1F21' -sb '#5E81AC' -sf '#EEEEEE' -fn 'monospace-10' -p 'Dmenu Prompt'"
+#     --------- Application Launchers-----------
+#
+#				You can choose from dmenu,				
+#				j4-dmenu-desktop (faster),
+#				or rofi. You can also use 
+#				a 3rd party launcher like albert 
+#				launcher but I keep these here.
 
-# There also is the (new) i3-dmenu-desktop/j4-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindsym $mod+d exec --no-startup-id j4-dmenu-desktop 
+# start dmenu (a program launcher)
+
+# bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#1D1F21' -sb '#5E81AC' -sf '#EEEEEE' -fn 'monospace-10' -p 'Dmenu Prompt'"
+
+# There also is the (new) i3-dmenu-desktop/j4-dmenu-desktop which only displays applications shipping a .desktop file. It is a wrapper around dmenu, so you need that installed.
+
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nf '#BBBBBB' -nb '#1D1F21' -sb '#5E81AC' -sf '#EEEEEE' -fn 'Ubuntu-10' -p 'Dmenu Prompt'"
 
 # Or Use Rofi instead
-# bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 14"
+
+bindsym $mod+d exec rofi -show drun -theme rmenu
 
 # change focus
 bindsym $mod+j focus left
@@ -167,10 +177,9 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 #Assigning the applications to their default Workspace
-assign [class = "Alacritty"] $ws1
 assign [class = "Vivaldi-stable"] $ws2
 assign [class = "Nautilus"] $ws3
-assign [class = "Clementine"] $ws4
+assign [class = "Museeks"] $ws4
 
 #-------------------------------------------------------------------------
 
@@ -246,5 +255,7 @@ bindsym $mod+Shift+f exec nautilus
 exec_always nitrogen --restore
 
 exec --no-startup-id compton
+
+#exec_always albert
 
 #-------------------------------------------------------------------------

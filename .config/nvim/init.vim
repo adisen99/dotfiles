@@ -17,6 +17,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'preservim/nerdcommenter'
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,10 +47,14 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set clipboard+=unnamedplus
-set nowrap
+set smartcase
 set incsearch
 set spelllang=en_us
 set cursorline
+
+"set colorcolumn=80
+"highlight ColorColumn ctermbg=0 guibg=lightgrey
+
 let mapleader = " "
 
 " Colorchemes
@@ -69,6 +75,7 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>v :wincmd v<CR>
 nnoremap <leader>s :sp<CR>
+nnoremap <Leader>b :buffers<CR>:b
 
 " syntastic settings
 let g:syntastic_always_populate_loc_list = 1
@@ -87,6 +94,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Nerdtree Settings
 
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 " Automatically start nerdtree if no file is opened

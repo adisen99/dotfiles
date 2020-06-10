@@ -178,7 +178,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 #Assigning the applications to their default Workspace
 assign [class = "Vivaldi-stable"] $ws2
-assign [class = "Nautilus"] $ws3
+assign [class = "Thunar"] $ws3
 assign [class = "Museeks"] $ws4
 
 #-------------------------------------------------------------------------
@@ -250,7 +250,7 @@ bar {
 #----------------MISCELLANEOUS--------------------------------------------
 
 bindsym $mod+shift+x exec i3lock
-bindsym $mod+Shift+f exec nautilus
+bindsym $mod+Shift+f exec thunar
 
 exec_always nitrogen --restore
 

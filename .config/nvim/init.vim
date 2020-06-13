@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'chrisbra/colorizer'
+Plugin 'chrisbra/Colorizer'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -19,6 +19,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'preservim/nerdcommenter'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'vim-scripts/indentpython.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,7 +50,8 @@ set statusline+=%*
 set clipboard+=unnamedplus
 set smartcase
 set incsearch
-set spelllang=en_us
+set spell
+set spelllang=en_gb
 set cursorline
 
 "set colorcolumn=80
@@ -76,13 +78,20 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>v :wincmd v<CR>
 nnoremap <leader>s :sp<CR>
 nnoremap <Leader>b :buffers<CR>:b
+nnoremap <leader>3 :ColorHighlight<CR>
+
+" YouCompleteMe settings
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " syntastic settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_tex_checkers = ['lacheck', 'text/language_check']
 
 " Vim Airline Settings
 
@@ -94,8 +103,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Nerdtree Settings
 
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+"let NERDTreeMinimalUI = 1
+"let NERDTreeDirArrows = 1
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 " Automatically start nerdtree if no file is opened

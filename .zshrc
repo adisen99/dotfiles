@@ -8,7 +8,7 @@ export ZSH="/home/adityas/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="oint"
+ZSH_THEME="oxide"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -96,16 +96,16 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias v='nvim'
-alias vim='nvim'
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 alias dirs="dirs -v"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias rfm='ranger'
 
 #ufetch
-ufetch-linux
+#ufetch-linux
 #neofetch
-#neofetch --ascii_distro linux
+neofetch --ascii_distro linux
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 

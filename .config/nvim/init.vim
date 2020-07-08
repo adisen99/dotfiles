@@ -1,29 +1,28 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'chrisbra/Colorizer'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'preservim/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'preservim/nerdcommenter'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'vim-scripts/indentpython.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Plugins usign vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'ycm-core/YouCompleteMe'
+Plug 'sheerun/vim-polyglot'
+Plug 'lazywei/vim-matlab'
+Plug 'vim-syntastic/syntastic'
+Plug 'chrisbra/Colorizer'
+Plug 'joshdick/onedark.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdcommenter'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'godlygeek/tabular'
+Plug 'trusktr/seti.vim'
+Plug 'tmsvg/pear-tree'
+
+call plug#end()
 
 " General vim stuff
 syntax on
@@ -50,7 +49,7 @@ set statusline+=%*
 set clipboard+=unnamedplus
 set smartcase
 set incsearch
-set spell
+"set spell
 set spelllang=en_gb
 set cursorline
 
@@ -58,15 +57,6 @@ set cursorline
 "highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 let mapleader = " "
-
-" Colorchemes
-
-colorscheme moriarty 
-
-" my other favourite colorschemes are
-" minimalist
-" molokai_dark
-" nature
 
 " Remapping and Shortcuts
 " Replace all is aliased to S
@@ -78,7 +68,29 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>v :wincmd v<CR>
 nnoremap <leader>s :sp<CR>
 nnoremap <Leader>b :buffers<CR>:b
-nnoremap <leader>3 :ColorHighlight<CR>
+nnoremap <leader>3 :ColorToggle<CR>
+
+" Colorchemes
+let g:onedark_terminal_italics = 1
+colorscheme onedark
+
+" OneDark settings
+
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 
 " YouCompleteMe settings
 
@@ -91,15 +103,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_tex_checkers = ['lacheck', 'text/language_check']
+"let g:syntastic_tex_checkers = ['lacheck', 'text/language_check']
 
 " Vim Airline Settings
 
-let g:airline_theme='base16_google'
+let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline_powerline_fonts = 0
 
 " Nerdtree Settings
 

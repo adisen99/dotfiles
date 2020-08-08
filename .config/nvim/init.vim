@@ -37,6 +37,7 @@ map <Left> <NOP>
 
 set background=dark
 set expandtab
+set mouse=a
 set paste
 set t_Co=256
 set autoindent
@@ -68,6 +69,7 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>v :wincmd v<CR>
 nnoremap <leader>s :sp<CR>
 nnoremap <Leader>b :buffers<CR>:b
+nnoremap <leader><Tab> :bnext<CR>
 nnoremap <leader>3 :ColorToggle<CR>
 
 " Colorchemes

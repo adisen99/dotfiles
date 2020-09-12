@@ -99,8 +99,18 @@ alias v='nvim'
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 alias dirs="dirs -v"
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' # bare git repository
 alias rfm='ranger'
+alias cp='cp -i'        # confirm before overwriting something
+alias df='df -h'        # human-readable sizes
+alias free='free -m'    # show sizes in MB
+
+# Changing "ls" to "exa"
+alias ls='exa --group-directories-first' # my preferred listing
+alias la='exa -a --group-directories-first'  # all files and dirs
+alias ll='exa -l --group-directories-first'  # long format
+alias lal='exa -al --group-directories-first' # long format with all files and dirs
+#alias lt='exa -aT --group-directories-first' # tree listing
 
 #ufetch
 #ufetch-linux

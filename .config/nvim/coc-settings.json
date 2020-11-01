@@ -1,0 +1,51 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "html",
+        "yaml",
+        "json",
+        "python",
+        "vim",
+        "fortran"
+    ],
+    //suggest
+    "suggest.autoTrigger": "always",
+    "suggest.enablePreview": true,
+    "suggest.noselect": false,
+    // python config
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.jediEnabled": true,
+    //explorer
+    "explorer.width": 30,
+    "explorer.icon.enableVimDevicons": false,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.file.showHiddenFiles": true,
+    "explorer.keyMappings.global": {
+        "<cr>": [
+            "explandable?",
+            "expand",
+            "open"
+        ],
+        "v": "open:vertsplit"
+    },
+    //snippets
+    "snippets.ultisnips.directories": [
+        "UltiSnips",
+        "~/.config/nvim/utils/snips"
+    ],
+    //Fortran
+    "languageserver": {
+        "fortran": {
+            "command": "fortls",
+            "filetypes": [
+                "fortran"
+            ],
+            "rootPatterns": [
+                ".fortls",
+                ".git/"
+            ]
+        }
+    }
+}

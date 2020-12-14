@@ -18,7 +18,6 @@
     // python config
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
-    "python.jediEnabled": true,
     //explorer
     "explorer.width": 30,
     "explorer.icon.enableVimDevicons": false,

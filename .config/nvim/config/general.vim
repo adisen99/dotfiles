@@ -3,6 +3,13 @@ filetype off                  " required
 filetype plugin indent on    " required
 set shell=sh "setting made for nerdtree-git-plugin to work
 
+" Vim-Pencil plugin settings
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
+
 " General vim stuff
 syntax on
 set nu rnu

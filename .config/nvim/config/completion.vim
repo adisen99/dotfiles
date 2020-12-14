@@ -3,18 +3,17 @@
 let g:coc_global_extensions = [
 	\ 'coc-snippets',
 	\ 'coc-pairs',
-	\ 'coc-python',
+	\ 'coc-pyright',
 	\ 'coc-html',
 	\ 'coc-css',
 	\ 'coc-clangd',
-	\ 'coc-julia',
-    \ 'coc-markdownlint',
+	\ 'coc-markdownlint',
 	\ 'coc-vimlsp',
 	\ 'coc-yaml',
 	\ 'coc-json',
-    \ 'coc-toml',
-    \ 'coc-texlab',
-    \ 'coc-explorer',
+	\ 'coc-toml',
+	\ 'coc-texlab',
+	\ 'coc-explorer',
 	\ ]
 
 " from readme

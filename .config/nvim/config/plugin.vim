@@ -19,5 +19,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'reedes/vim-pencil'
 
 call plug#end()

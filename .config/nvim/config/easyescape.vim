@@ -4,4 +4,4 @@ cnoremap jk <ESC>
 cnoremap kj <ESC>
 
 " Disable in text and markdown files
-autocmd FileType text,markdown call setbufvar(bufnr("%"), 'easyescape_disable', 1)
+"autocmd FileType text,markdown call setbufvar(bufnr("%"), 'easyescape_disable', 1)

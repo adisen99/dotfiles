@@ -44,6 +44,7 @@ set shiftwidth=4
 set clipboard+=unnamedplus
 set smartcase
 set incsearch
+set scrolloff=8
 "set spell
 set spelllang=en_gb
 set cursorline
@@ -64,9 +65,11 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>v :wincmd v<CR>
 nnoremap <leader>z :sp<CR>
 nnoremap <leader>b :buffers<CR>:b
-nnoremap <silent>gb :bnext<CR>
+nnoremap <silent>gbn :bnext<CR>
+nnoremap <silent>gbp :bprevious<CR>
 nnoremap <leader>3 :ColorToggle<CR>
 nnoremap <C-s> :source %<CR>
+nnoremap <C-n> :nohl<CR>
 
 " Opening Terminal in Vim
 nnoremap <A-t> :edit term://zsh<CR>

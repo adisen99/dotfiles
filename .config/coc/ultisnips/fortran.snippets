@@ -1,0 +1,55 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet prog "Basic Fortran program skeleton" b
+program $1
+	implicit none
+
+end program $1
+endsnippet
+
+snippet print "print snippet" b
+print*,
+endsnippet
+
+snippet read "read snippet" b
+read*,
+endsnippet
+
+snippet func "function snippet" b
+function $1()
+end function $1()
+endsnippet
+
+snippet sub "subroutine snippet" b
+subroutine $1
+end subroutine $1
+endsnippet
+
+snippet do "do loop snippet" b
+do $1
+end do
+endsnippet

@@ -49,7 +49,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  #decorations: none
+  decorations: full
 
   # Startup Mode (changes require restart)
   #
@@ -76,7 +76,7 @@ window:
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
-  #gtk_theme_variant: None
+  gtk_theme_variant: dark
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -106,7 +106,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) UbuntuMono Nerd Font Mono 10
     #   - (Windows) Consolas
-    family: SF Mono
+    family: Source Code Pro
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -117,7 +117,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: SF Mono
+    family: Source Code Pro
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -128,7 +128,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: SF Mono
+    family: Source Code Pro
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -139,13 +139,13 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: SF Mono
+    family: Source Code Pro
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 9.5
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -233,41 +233,47 @@ font:
     #cyan:    '0x54ced6'
     #white:   '0xffffff'
 
-# Colors (Ayu Dark)
-#colors:
-  # Default colors
-  #primary:
-    #background: '0x0f1419'
-    #foreground: '0xe6e1cf'
+ #Colors (Base16 Default Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x181818'
+#     foreground: '0xd8d8d8'
 
-  # Normal colors
-  #normal:
-    #black:   '0x000000'
-    #red:     '0xf34a4a'
-    #green:   '0xbae67e'
-    #yellow:  '0xffee99'
-    #blue:    '0x73d0ff'
-    #magenta: '0xd4bfff'
-    #cyan:    '0x83CEC6'
-    #white:   '0xf2f2f2'
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   #cursor:
+#     #text: '0xd8d8d8'
+#     #cursor: '0xd8d8d8'
 
-   #Bright colors
-  #bright:
-    #black:   '0x737d87'
-    #red:     '0xff3333'
-    #green:   '0xc2d94c'
-    #yellow:  '0xe7c547'
-    #blue:    '0x59c2ff'
-    #magenta: '0xb77ee0'
-    #cyan:    '0x5ccfe6'
-    #white:   '0xffffff'
+#   # Normal colors
+#   normal:
+#     black:   '0x181818'
+#     red:     '0xab4642'
+#     green:   '0xa1b56c'
+#     yellow:  '0xf7ca88'
+#     blue:    '0x7cafc2'
+#     magenta: '0xba8baf'
+#     cyan:    '0x86c1b9'
+#     white:   '0xd8d8d8'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x585858'
+#     red:     '0xab4642'
+#     green:   '0xa1b56c'
+#     yellow:  '0xf7ca88'
+#     blue:    '0x7cafc2'
+#     magenta: '0xba8baf'
+#     cyan:    '0x86c1b9'
+#     white:   '0xf8f8f8'
+
 
  #Colors (Base16 Default Dark)
 colors:
   # Default colors
   primary:
-    background: '0x181818'
-    foreground: '0xd8d8d8'
+    background: '0x000000'
+    foreground: '0xeaeaea'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   #cursor:
@@ -276,88 +282,14 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x181818'
-    red:     '0xab4642'
-    green:   '0xa1b56c'
-    yellow:  '0xf7ca88'
-    blue:    '0x7cafc2'
-    magenta: '0xba8baf'
-    cyan:    '0x86c1b9'
-    white:   '0xd8d8d8'
-
-  # Bright colors
-  bright:
-    black:   '0x585858'
-    red:     '0xab4642'
-    green:   '0xa1b56c'
-    yellow:  '0xf7ca88'
-    blue:    '0x7cafc2'
-    magenta: '0xba8baf'
-    cyan:    '0x86c1b9'
-    white:   '0xf8f8f8'
-
-# Colors (equinusocio material)
-#colors:
-  # Default colors
-  #primary:
-    #background: '0x000000'
-    #foreground: '0xffffff'
-
-  #cursor:
-    #text: '0x000000'
-    #cursor: '0xffcc00'
-
-  # Normal colors
-  #normal:
-    #black:   '0x000000'
-    #red:     '0xff5370'
-    #green:   '0xc3e88d'
-    #yellow:  '0xffcb6b'
-    #blue:    '0x82aaff'
-    #magenta: '0xc792ea'
-    #cyan:    '0x89ddff'
-    #white:   '0xffffff'
-
-  # Bright colors
-  #bright:
-    #black:   '0x484848'
-    #red:     '0xFF5370'
-    #green:   '0xc3e88d'
-    #yellow:  '0xffcb6b'
-    #blue:    '0x82aaff'
-    #magenta: '0xc792ea'
-    #cyan:    '0x89ddff'
-    #white:   '0xffffff'
-
-# Colors (Dark+)
-#colors:
-  #bright:
-    #black: '#666666'
-    #blue: '#3b8eea'
-    #cyan: '#29b8db'
-    #green: '#23d18b'
-    #magenta: '#d670d6'
-    #red: '#f14c4c'
-    #white: '#e5e5e5'
-    #yellow: '#f5f543'
-  #cursor:
-    #cursor: '#ffffff'
-    #text: '#000000'
-  #normal:
-    #black: '#000000'
-    #blue: '#2472c8'
-    #cyan: '#11a8cd'
-    #green: '#0dbc79'
-    #magenta: '#bc3fbc'
-    #red: '#cd3131'
-    #white: '#e5e5e5'
-    #yellow: '#e5e510'
-  #primary:
-    #background: '#0e0e0e'
-    #foreground: '#cccccc'
-  #selection:
-    #background: '#3a3d41'
-    #text: '#e0e0e0'
+    black:   '0x3b3b3b'
+    red:     '0xcf6a4c'
+    green:   '0x99ad6a'
+    yellow:  '0xd8ad4c'
+    blue:    '0x597bc5'
+    magenta: '0xa037b0'
+    cyan:    '0x71b9f8'
+    white:   '0xadadad'
 
   # Indexed Colors
   #

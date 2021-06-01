@@ -1,7 +1,10 @@
+-- Colorschemes selection
+
 local cmd = vim.cmd
 
 -- jellybeans
 cmd('colorscheme jellybeans-nvim')
+vim.g.jellybeans_italic_comments = true
 
 -- material
 --[[ vim.g.material_style = 'deep ocean'

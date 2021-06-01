@@ -13,15 +13,14 @@ map('n', '<Space>', '<NOP>', M)
 g.mapleader = ' '
 
 map('n', '<leader><esc>', ':nohlsearch<cr>', M)
-map('n', '<leader>m', ':bnext<cr>', M)
+map('n', '<leader>n', ':bnext<cr>', M)
 map('n', '<leader>p', ':bprev<cr>', M)
 -- map('n', '<leader>x', ':BufferClose<cr>', M)
 
 -- nvim-tree shortcuts
 
-map('n', '<leader>n', ':NvimTreeToggle<cr>', M)
+map('n', '<leader>t', ':NvimTreeToggle<cr>', M)
 map('n', '<leader>r', ':NvimTreeRefresh<CR>', M)
-map('n', '<leader>f', ':NvimTreeFindFile<CR>', M)
 
 -- remove the arrow keys
 
@@ -36,6 +35,11 @@ map('n', '<A-j>', ':resize +2<cr>', M)
 map('n', '<A-h>', ':vertical resize -2<cr>', M)
 map('n', '<A-l>', ':vertical resize +2<cr>', M)
 
+-- better indexing
+
+map('v', '<', '<gv', M)
+map('v', '>', '>gv', M)
+
 -- navigation
 
 map('n', 'S', ':%s//g<Left><Left>', option)
@@ -46,5 +50,9 @@ map('n', '<leader>l', ':wincmd l<cr>', M)
 map('n', '<leader>v', ':wincmd v<cr>', M)
 map('n', '<leader>z', ':sp<cr>', M)
 map('n', '<leader>b', ':buffers<cr>:b', M)
-map('n', '<C-s>', ':source %<cr>', M)
+map('n', '<C-s>', ':luafile %<cr>', M)
 map('i', 'jk', '<esc>', M)
+
+-- Colorizer mapping
+
+map('n', '<leader>3', ':ColorizerToggle<cr>', M)

@@ -21,14 +21,28 @@ return require('packer').startup(function()
   -- nvim lsp
   use 'neovim/nvim-lspconfig' -- built-in lsp config
   use 'hrsh7th/nvim-compe' -- autocompletion
-  -- lualine
-  use 'hoob3rt/lualine.nvim'
+  -- treesitter
+  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  -- nvim-hardline (statusline)
+  use 'ojroques/nvim-hardline'
   -- comments
   use 'b3nj5m1n/kommentary'
   -- autopairing bracket
   use 'windwp/nvim-autopairs'
-  -- tabline - bufferline
-  use 'akinsho/nvim-bufferline.lua'
+  -- indent blankline
+  use { 
+    'lukas-reineke/indent-blankline.nvim',
+    branch = 'lua'
+  }
+  -- Colorizer
+  use 'norcalli/nvim-colorizer.lua'
+  -- Git integration
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
   -- fuzzy search
   use {
     'ojroques/nvim-lspfuzzy',

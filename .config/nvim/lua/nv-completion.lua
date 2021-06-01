@@ -17,11 +17,11 @@ require'compe'.setup {
   source = {
     path = {kind = "   (Path)"},
     buffer = {kind = "   (Buffer)"},
-    calc = {kind = "   (Calc)"},
+    -- calc = {kind = "   (Calc)"},
     vsnip = {kind = "   (Snippet)"},
     nvim_lsp = {kind = "   (LSP)"},
-    -- nvim_lua = {kind = "  "},
-	nvim_lua = false,
+    nvim_lua = {kind = "  "},
+    -- nvim_lua = false,
     spell = {kind = "   (Spell)"},
     tags = false,
   };

@@ -38,10 +38,19 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 
-local servers = { "pyright", "fortls", "bashls" }
+local servers = { "pyright", "bashls", "texlab" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
+
+-- Fortan lsp setup
+
+require'lspconfig'.fortls.setup{
+  on_attach = on_attach,
+  settings = {
+    nthreads = 4 -- setting nthreads manually to 4
+  }
+}
 
 -- Lua lsp configuration
 
@@ -61,6 +70,7 @@ local sumneko_root_path = '/home/aditya/.config/nvim/lua-ls/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 
 require'lspconfig'.sumneko_lua.setup {
+  on_attach = on_attach,
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   settings = {
     Lua = {

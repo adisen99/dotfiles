@@ -5,7 +5,7 @@
 local o = vim.o
 local wo = vim.wo
 local bo = vim.bo
-local cmd = vim.cmd
+-- local cmd = vim.cmd
 
 -- Set options
 
@@ -21,11 +21,13 @@ o.termguicolors = true
 o.pumheight = 10
 o.completeopt = "menuone,noselect"
 o.clipboard = 'unnamedplus'
+o.hidden = true
 o.backup = false
 o.writebackup = false
 o.cmdheight = 2
 o.updatetime = 300
 o.timeoutlen = 100
+o.listchars='tab:→ ,eol:↲'
 
 -- buffer options
 bo.autoindent = true
@@ -33,10 +35,11 @@ bo.smartindent = true
 bo.tabstop = 4
 bo.softtabstop = 4
 bo.shiftwidth = 4
-bo.expandtab = true
+bo.expandtab = false
 
 -- window options
 wo.cursorline = true
 wo.colorcolumn = '80'
 wo.signcolumn = "yes"
-cmd('highlight ColorColumn ctermbg=0 guibg=darkgrey')
+wo.list = true
+-- cmd('highlight ColorColumn ctermbg=0 guibg=darkgrey')

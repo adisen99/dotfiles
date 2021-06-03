@@ -22,6 +22,3 @@ require('nv-fzf')
 require('nv-hardline')
 require('nv-gitsigns')
 require('nv-treesitter')
-
--- Set the default python environment
-vim.g.python3_host_prog='/home/aditya/anaconda3/bin/python3'

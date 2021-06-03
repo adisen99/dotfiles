@@ -1,7 +1,7 @@
 -- TreeSitter configuration
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "bash", "fortran", "python", "lua", "yaml", "toml" },
+  ensure_installed = { "bash", "fortran", "python", "lua", "yaml", "toml", "latex" },
   indent = {
     enable = true
   },

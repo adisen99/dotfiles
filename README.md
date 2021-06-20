@@ -1,8 +1,6 @@
 # Dotfiles
 
-<a href="https://adisen99.github.io">
-    <img src=https://raw.githubusercontent.com/adisen99/dotfiles/master/images/logo.png" alt="adisen99 logo" title="adisen99" align="center"/>
-</a>
+![Logo](./images/logo.png)
 
 These are the personal config files, Wallpapers, fonts (and more) of adisen99-
 

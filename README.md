@@ -1,7 +1,5 @@
 # Dotfiles
 
-![Logo](./images/logo.png)
-
 These are the personal config files, Wallpapers, fonts (and more) of adisen99-
 
 Most of the shell scripts and rc files are personlised for my workstation.

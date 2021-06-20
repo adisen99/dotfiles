@@ -1,8 +1,8 @@
-<a href="https://makc.co">
-    <img src=https://raw.githubusercontent.com/adisen99/dotfiles/master/images/logo.png" alt="adisen99 lgoo" title="adisen99" align="right" height="60" />
-</a>
-
 # Dotfiles
+
+<a href="https://adisen99.github.io">
+    <img src=https://raw.githubusercontent.com/adisen99/dotfiles/master/images/logo.png" alt="adisen99 logo" title="adisen99" align="center" height="60" />
+</a>
 
 These are the personal config files, Wallpapers, fonts (and more) of adisen99-
 

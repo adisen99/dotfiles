@@ -1,0 +1,6 @@
+#!/bin/sh
+HISTFILE="$ZDOTDIR"/.history
+HISTSIZE=1000
+SAVEHIST=1000
+# eval "$(_fnm env)"
+export PATH=$HOME/.local/bin:/usr/local/bin:/opt/opengrads:$HOME/Applications/squashfs-root/usr/bin:$PATH

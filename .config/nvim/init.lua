@@ -8,17 +8,21 @@ require('maps')
 require('plugins')
 
 -- LSP stuff
-require('nv-lsp')
-require('nv-completion')
+require('nv_lsp')
+require('nv_completion')
+
+-- Snippets using vsnip
+require('nv_snippets')
 
 -- Colorschemes
 require('colors')
 
 -- Plugins settings imported
-require('nv-tree')
-require('nv-kommentary')
-require('nv-autopairs')
-require('nv-fzf')
-require('nv-hardline')
-require('nv-gitsigns')
-require('nv-treesitter')
+require('nv_tree')
+require('nv_kommentary')
+require('nv_autopairs')
+require('nv_telescope')
+require('nv_hardline')
+require('nv_gitsigns')
+require('nv_treesitter')
+require('nv_markdown')

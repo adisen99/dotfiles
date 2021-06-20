@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+ export PATH=$HOME/.local/bin:/usr/local/bin:/opt/opengrads:$HOME/Applications/squashfs-root/usr/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/aditya/.oh-my-zsh"
@@ -8,7 +8,7 @@ export ZSH="/home/aditya/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="mortalscumbag"
+ZSH_THEME="fishy"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -30,7 +30,7 @@ ZSH_THEME="mortalscumbag"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=3
+export UPDATE_ZSH_DAYS=14
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
@@ -68,7 +68,7 @@ export UPDATE_ZSH_DAYS=3
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,14 +110,33 @@ alias ls='exa --group-directories-first' # my preferred listing
 alias la='exa -a --group-directories-first'  # all files and dirs
 alias ll='exa -l --group-directories-first'  # long format
 alias lal='exa -al --group-directories-first' # long format with all files and dirs
-#alias lt='exa -aT --group-directories-first' # tree listing
+alias lt='exa -aT --group-directories-first' # tree listing
 
 #ufetch
 #ufetch-linux
 #neofetch
-neofetch --ascii_distro macos
+#neofetch --ascii_distro macos
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
-echo " "
-fortune ~/.config/quotes/quotes
+#echo " "
+#fortune ~/.config/quotes/quotes
+
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/aditya/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/aditya/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/aditya/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/aditya/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+alias luamake=/home/aditya/.config/nvim/lua-ls/lua-language-server/3rd/luamake/luamake

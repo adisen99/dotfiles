@@ -112,5 +112,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-screenfetch 
-source /home/adityas/alacritty/extra/completions/alacritty.bash
+# screenfetch 
+# source /home/adityas/alacritty/extra/completions/alacritty.bash
+
+## Set zdotdir to zsh config home
+export ZDOTDIR=$HOME/.config/zsh

@@ -1,5 +1,7 @@
 -- Lua config to set keymaps and leaderkey
 
+local maps = {}
+
 --setting local variable
 
 local map = vim.api.nvim_set_keymap
@@ -50,9 +52,12 @@ map('n', '<leader>l', ':wincmd l<cr>', M)
 map('n', '<leader>v', ':wincmd v<cr>', M)
 map('n', '<leader>z', ':sp<cr>', M)
 map('n', '<leader>b', ':buffers<cr>:b', M)
+map('n', '<leader>x', ':%bd|e#<cr>', M) -- delete all inactive buffers at once
 map('n', '<C-s>', ':luafile %<cr>', M)
 map('i', 'jk', '<esc>', M)
 
 -- Colorizer mapping
 
 map('n', '<leader>3', ':ColorizerToggle<cr>', M)
+
+return maps

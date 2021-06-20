@@ -1,5 +1,7 @@
 -- General configuration, keymaps and set options
 
+local general = {}
+
 -- Use local variables for options
 
 local o = vim.o
@@ -39,7 +41,9 @@ bo.expandtab = false
 
 -- window options
 wo.cursorline = true
-wo.colorcolumn = '80'
+wo.colorcolumn = '100'
 wo.signcolumn = "yes"
-wo.list = true
+wo.list = false
 -- cmd('highlight ColorColumn ctermbg=0 guibg=darkgrey')
+
+return general

@@ -1,0 +1,57 @@
+{
+	"Pogram": {
+		"prefix": ["prog"],
+		"body": [
+			"program $1",
+			"\timplicit none",
+			"",
+			"end program $1"
+		],
+		"description": "Basic fortran program skeleton"
+	},
+	"Print": {
+		"prefix": ["print"],
+		"body": [
+		"print*,"
+		],
+		"description": "print snippet"
+	},
+	"Read": {
+		"prefix": ["read"],
+		"body": [
+		"read*,"
+		],
+		"description": "read snippet"
+	},
+	"Function": {
+		"prefix": ["func"],
+		"body": [
+		"function $1()",
+		"end function $1"
+		],
+		"description": "funtion snippet"
+	},
+	"Subroutine": {
+		"prefix": ["sub"],
+		"body": [
+		"subroutine $1()",
+		"end subroutine $1"
+		],
+		"description": "subroutine snippet"
+	},
+	"do loop": {
+		"prefix": ["do"],
+		"body": [
+		"do $1",
+		"end do"
+		],
+		"description": "do loop snippet"
+	},
+	"If then else": {
+		"prefix": ["if"],
+		"body": [
+		"if ($1) then",
+		"end if"
+		]
+	}
+}

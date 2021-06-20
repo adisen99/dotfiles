@@ -1,3 +1,5 @@
+-- Lua config file containing all plugin details
+
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
@@ -13,8 +15,11 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   -- colorscheme
   use 'rktjmp/lush.nvim' -- support for colorschemes
-  use 'metalelf0/jellybeans-nvim' -- jellybeans
-  use 'marko-cerovac/material.nvim' -- material
+  -- use 'metalelf0/jellybeans-nvim' -- jellybeans
+	use {
+		'adisen99/jellybeans-nvim',
+		branch = 'testing'
+	}
   -- nvim-tree
   use 'kyazdani42/nvim-web-devicons' -- for file icons
   use 'kyazdani42/nvim-tree.lua'
@@ -23,6 +28,9 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-compe' -- autocompletion
   -- treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  -- snippets
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
   -- nvim-hardline (statusline)
   use 'ojroques/nvim-hardline'
   -- comments
@@ -30,10 +38,12 @@ return require('packer').startup(function()
   -- autopairing bracket
   use 'windwp/nvim-autopairs'
   -- indent blankline
-  use { 
+  use {
     'lukas-reineke/indent-blankline.nvim',
     branch = 'lua'
   }
+	-- markdown
+	use 'plasticboy/vim-markdown'
   -- Colorizer
   use 'norcalli/nvim-colorizer.lua'
   -- Git integration
@@ -43,12 +53,16 @@ return require('packer').startup(function()
       'nvim-lua/plenary.nvim'
     }
   }
-  -- fuzzy search
-  use {
-    'ojroques/nvim-lspfuzzy',
-    requires = {
-      {'junegunn/fzf'},
-      {'junegunn/fzf.vim'},  -- to enable preview (optional)
-    },
-  }
+  -- fuzzy search using telescope
+	use {
+	  'nvim-telescope/telescope.nvim',
+	  requires = {
+			{'nvim-lua/popup.nvim'},
+			{'nvim-lua/plenary.nvim'}
+		}
+	}
+	use {
+		'nvim-telescope/telescope-fzf-native.nvim',
+		run = 'make'
+	}
 end)

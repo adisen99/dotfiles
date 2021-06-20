@@ -4,7 +4,6 @@ filetype plugin indent on    " required
 
 " General vim stuff
 syntax on
-set number relativenumber
 set nu rnu
 
 " No Arrow keys
@@ -16,20 +15,15 @@ map <Left> <NOP>
 set background=dark
 set expandtab
 set paste
-set t_Co=256
 set autoindent
 set smartindent
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 set clipboard+=unnamedplus
 set smartcase
 set incsearch
 set spell
 set spelllang=en_gb
-set cursorline
 
 "set colorcolumn=80
 "highlight ColorColumn ctermbg=0 guibg=lightgrey

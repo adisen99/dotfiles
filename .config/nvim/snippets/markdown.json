@@ -1,0 +1,9 @@
+{
+	"Graphic": {
+		"prefix": ["graphic"],
+		"body": [
+			"![$1](){width=300px height=300px}"
+		],
+		"description": "Image graphic snippet"
+	}
+}

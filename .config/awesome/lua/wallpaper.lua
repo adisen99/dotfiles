@@ -6,6 +6,7 @@ local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 
 local function set_wallpaper(s)
     -- Wallpaper
@@ -70,6 +71,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
+			battery_widget(), -- my battery_widget
             mytextclock,
             s.mylayoutbox,
         },

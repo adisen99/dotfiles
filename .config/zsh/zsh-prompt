@@ -28,10 +28,10 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 }
 
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr ' *'
-zstyle ':vcs_info:*' stagedstr ' +'
+zstyle ':vcs_info:*' unstagedstr "%{$fg_bold[red]%} ●%{$reset_color%}"
+zstyle ':vcs_info:*' stagedstr "%{$fg_bold[green]%} +%{$reset_color%}"
 # zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})"
-zstyle ':vcs_info:git:*' formats "%{$fg_bold[green]%}%b%{$reset_color%}%{$fg_bold[blue]%}%m%{$fg_bold[red]%}%u%{$fg_bold[yellow]%}%c%{$reset_color%}"
+zstyle ':vcs_info:git:*' formats "%{$fg_bold[green]%}%b%{$reset_color%}%{$fg_bold[blue]%}%m%{$reset_color%}%u%{$fg_bold[yellow]%}%c%{$reset_color%}"
 
 # ZSH Theme emulating the Fish shell's default prompt.
 

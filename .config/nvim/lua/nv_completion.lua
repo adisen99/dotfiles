@@ -1,6 +1,6 @@
 -- Compe setup and configuration
 
-local nv_completion = {}
+local M = {}
 
 require'compe'.setup {
   enabled = true;
@@ -19,12 +19,13 @@ require'compe'.setup {
   source = {
     path = {kind = "   (Path)"},
     buffer = {kind = "   (Buffer)"},
+		calc = false,
     -- calc = {kind = "   (Calc)"},
     vsnip = {kind = "   (Snippet)"},
     nvim_lsp = {kind = "   (LSP)"},
     nvim_lua = {kind = "  "},
     -- nvim_lua = false,
-    spell = {kind = "   (Spell)"},
+    -- spell = {kind = "   (Spell)"},
     tags = false,
   };
 }
@@ -67,4 +68,4 @@ vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
-return nv_completion
+return M

@@ -41,7 +41,7 @@ alias list_systemctl="systemctl list-unit-files --state=enabled"
 
 
 alias v='nvim'
-alias zshconfig="nvim ~/.config/zsh/zshrc"
+alias zshconfig="nvim ~/.config/zsh/"
 alias d="dirs -v"
 #alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' # bare git repository
 alias rfm='ranger'

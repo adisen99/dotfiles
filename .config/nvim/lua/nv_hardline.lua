@@ -1,10 +1,11 @@
 -- Indent backline configuration
 
-local nv_hardline = {}
+local M = {}
 
 require('hardline').setup {
   bufferline = true,  -- enable bufferline
-  theme = 'jellybeans',   -- change theme
+  theme = 'codeschool_dark',   -- change theme
+  -- theme = 'jellybeans',   -- change theme
   sections = {         -- define sections
     {class = 'mode', item = require('hardline.parts.mode').get_item},
     {class = 'high', item = require('hardline.parts.git').get_item, hide = 80},
@@ -19,9 +20,9 @@ require('hardline').setup {
     {class = 'mode', item = require('hardline.parts.line').get_item},
   },
   bufferline_settings = {
-    exclude_terminal = false,  -- don't show terminal buffers in bufferline
+    exclude_terminal = true,  -- don't show terminal buffers in bufferline
     show_index = false,        -- show buffer indexes (not the actual buffer numbers) in bufferline
   },
 }
 
-return nv_hardline
+return M

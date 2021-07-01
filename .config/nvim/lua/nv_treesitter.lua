@@ -1,6 +1,6 @@
 -- TreeSitter configuration
 
-local nv_treesitter = {}
+local M = {}
 
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
@@ -8,6 +8,7 @@ require'nvim-treesitter.configs'.setup {
 		"fortran",
 		"python",
 		"lua",
+		"rust",
 		"yaml",
 		"toml",
 		"latex",
@@ -21,7 +22,7 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
-		disable = { "fortran" }
+		-- disable = { "fortran", "latex" }
   },
   incremental_selection = {
     enable = true,
@@ -34,4 +35,4 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
-return nv_treesitter
+return M

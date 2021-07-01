@@ -1,6 +1,6 @@
 -- General configuration, keymaps and set options
 
-local general = {}
+local M = {}
 
 -- Use local variables for options
 
@@ -21,7 +21,8 @@ o.incsearch = true
 o.scrolloff = 8
 o.termguicolors = true
 o.pumheight = 10
-o.completeopt = "menuone,noselect"
+o.completeopt = "menuone,noinsert,noselect"
+vim.cmd([[set shortmess+=c]])
 o.clipboard = 'unnamedplus'
 o.hidden = true
 o.backup = false
@@ -30,6 +31,8 @@ o.cmdheight = 2
 o.updatetime = 300
 o.timeoutlen = 100
 o.listchars='tab:→ ,eol:↲'
+--[[ o.splitright = true
+o.splitbelow = true ]]
 
 -- buffer options
 bo.autoindent = true
@@ -43,7 +46,8 @@ bo.expandtab = false
 wo.cursorline = true
 wo.colorcolumn = '100'
 wo.signcolumn = "yes"
-wo.list = false
+wo.list = true
+wo.wrap = false
 -- cmd('highlight ColorColumn ctermbg=0 guibg=darkgrey')
 
-return general
+return M

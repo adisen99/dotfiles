@@ -1,1 +1,1 @@
-setl ts=4 sts=4 sw=4 ai si noexpandtab
+setl ts=4 sts=4 sw=4 ai si noexpandtab spell wrap

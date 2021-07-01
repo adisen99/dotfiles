@@ -1,6 +1,9 @@
 #!/bin/sh
 
 # some useful options (man zshoptions)
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
 stty stop undef		# Disable ctrl-s to freeze terminal.
@@ -31,7 +34,7 @@ source "$ZDOTDIR/zsh-functions"
 
 # Normal files to source
 zsh_add_file "zsh-exports"
-# zsh_add_file "zsh-vim-mode"
+zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
 zsh_add_file "zsh-misc"

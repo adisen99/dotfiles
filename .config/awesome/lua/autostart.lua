@@ -8,6 +8,6 @@ awful.spawn.with_shell('picom')
 awful.spawn.with_shell('volumeicon')
 awful.spawn.with_shell('nitrogen --restore')
 awful.spawn.with_shell('nm-applet')
-awful.spawn.with_shell('xset r rate 275 40')
+awful.spawn.with_shell('xset r rate 240 40')
 
 return autostart

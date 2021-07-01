@@ -1,6 +1,6 @@
 -- Snippets vsnip configuration
 
-local nv_snippets = {}
+local M = {}
 
 local cmd = vim.cmd
 local g = vim.g
@@ -17,4 +17,4 @@ imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l
 smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
 ]])
 
-return nv_snippets
+return M

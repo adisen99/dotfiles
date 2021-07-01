@@ -3,10 +3,10 @@
 local M = {}
 
 local map = vim.api.nvim_set_keymap
+local N = { noremap = true, silent= true }
 
 require('telescope').setup{
   defaults = {
-    prompt_position = "bottom",
     prompt_prefix = ">> ",
     selection_caret = "> ",
     entry_prefix = "  ",
@@ -23,8 +23,14 @@ require('telescope').setup{
     },
     git_files = {
       theme = "ivy"
-    }
+    },
+		help_tags = {
+			theme = "ivy"
+		},
   },
+	layout_config = {
+    prompt_position = "bottom",
+	},
   extensions = {
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
@@ -40,7 +46,9 @@ require('telescope').setup{
 require('telescope').load_extension('fzf')
 
 -- Mappings
-map('n', '<A-p>', ':lua require("telescope.builtin").find_files()<cr>', {})
-map('n', '<A-g>', ':lua require("telescope.builtin").git_files()<cr>', {})
+map('n', '<A-p>', ':lua require("telescope.builtin").find_files()<cr>', N)
+map('n', '<A-g>', ':lua require("telescope.builtin").git_files()<cr>', N)
+map('n', '<A-b>', ':lua require("telescope.builtin").buffers()<cr>', N)
+map('n', '<A-h>', ':lua require("telescope.builtin").help_tags()<cr>', N)
 
 return M

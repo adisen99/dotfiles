@@ -71,14 +71,16 @@ return require('packer').startup(function(use)
 	-- snippets
 	use {
 		'hrsh7th/vim-vsnip',
-		requires = {'hrsh7th/vim-vsnip-integ', after = 'vim-vsnip', event = 'InsertEnter'},
+		requires = {'hrsh7th/vim-vsnip-integ', event = 'InsertEnter'},
 		event = 'InsertEnter',
+		after = 'vim-vsnip-integ',
 		config = function()
 			require('nv_snippets')
 		end
 	}
 
-	-- nvim-hardline (statusline)
+	-- (statusline)
+	-- nvim-hardline
 	use {
 		'ojroques/nvim-hardline',
 		config = function()
@@ -111,12 +113,6 @@ return require('packer').startup(function(use)
 		disable = true
   }
 
-	-- markdown
-	use {
-		'plasticboy/vim-markdown',
-		opt = true
-	}
-
   -- Colorizer
   use {
 		'norcalli/nvim-colorizer.lua',
@@ -146,7 +142,7 @@ return require('packer').startup(function(use)
 			{'nvim-lua/popup.nvim'},
 			{'nvim-lua/plenary.nvim'}
 		},
-		keys = {'<A-p>', '<A-g>'},
+		keys = {'<A-p>', '<A-g>', '<A-b>', '<A-h>'},
 		config = function()
 			require('nv_telescope')
 		end

@@ -20,8 +20,8 @@ cmd('colorscheme jellybeans-nvim') ]]
 -- Codeschool
 g.codeschool_contrast_dark = "hard"
 require('codeschool').setup({
-	plugins = {"netrw", "nvimtree", "gitsigns", "lsp", "treesitter", "telescope"},
-	langs = {"lua", "python", "rust"},
+	plugins = {"netrw", "nvimtree", "gitsigns", "lsp", "telescope"},
+	langs = {"lua", "python", "rust", "markdown"},
 })
 
 return M

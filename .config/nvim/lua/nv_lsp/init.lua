@@ -26,7 +26,7 @@ require('nv_lsp.web_lsp')
 
 -- redifining the singcolumn icons
 
-vim.fn.sign_define(
+--[[ vim.fn.sign_define(
     "LspDiagnosticsSignError",
     {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
 )
@@ -41,7 +41,7 @@ vim.fn.sign_define(
 vim.fn.sign_define(
     "LspDiagnosticsSignInformation",
     {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
-)
+) ]]
 
 -- symbols for autocomplete
 vim.lsp.protocol.CompletionItemKind = {

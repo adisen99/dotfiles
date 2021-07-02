@@ -33,7 +33,7 @@ o.scrolloff = 8
 o.termguicolors = true
 o.pumheight = 10
 o.completeopt = "menuone,noinsert,noselect"
-vim.opt.shortmess:append "c"
+opt.shortmess:append "c"
 o.clipboard = 'unnamedplus'
 o.hidden = true
 o.backup = false

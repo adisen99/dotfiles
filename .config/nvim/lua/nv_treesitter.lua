@@ -21,7 +21,7 @@ require'nvim-treesitter.configs'.setup {
 		-- disable = { "python" }
   },
   highlight = {
-    enable = false,
+    enable = true,
 		-- disable = { "fortran", "latex" }
   },
   incremental_selection = {

@@ -82,7 +82,8 @@ return require('packer').startup(function(use)
 	-- (statusline)
 	-- nvim-hardline
 	use {
-		'ojroques/nvim-hardline',
+		'adisen99/nvim-hardline',
+		branch = 'custom_colors',
 		config = function()
 			require('nv_hardline')
 		end

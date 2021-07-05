@@ -45,6 +45,36 @@ require('telescope').setup{
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
 
+-- Custom functions
+
+-- Function to edit dotfiles
+M.edit_neovim = function()
+  require("telescope.builtin").find_files {
+    shorten_path = false,
+    cwd = "~/.config/nvim",
+    prompt_title = "~ neovim config ~",
+    theme = "ivy"
+  }
+end
+
+M.edit_zsh = function()
+  require("telescope.builtin").find_files {
+    shorten_path = false,
+    cwd = "~/.config/zsh",
+    prompt_title = "~ zsh config ~",
+    theme = "ivy"
+  }
+end
+
+M.edit_neorg = function()
+  require("telescope.builtin").find_files {
+    shorten_path = false,
+    cwd = "~/Nextcloud2/neorg",
+    prompt_title = "~ neorg ~",
+    theme = "ivy"
+  }
+end
+
 -- Mappings
 map('n', '<A-p>', ':lua require("telescope.builtin").find_files()<cr>', N)
 map('n', '<A-g>', ':lua require("telescope.builtin").git_files()<cr>', N)

@@ -18,5 +18,8 @@ require('colors')
 -- Get the plugins
 require('plugins')
 
+vim.g.syntax = true
+vim.g.showtabline = 1
+
 -- run packer compile when plugins.lua is updated
 vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])

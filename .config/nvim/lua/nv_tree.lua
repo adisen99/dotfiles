@@ -13,8 +13,8 @@ g.nvim_tree_hide_dotfiles = 1 -- 0 by default, this option hides files and folde
 g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
 g.nvim_tree_highlight_opened_files = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
 g.nvim_tree_width_allow_resize  = 1 -- 0 by default, will not resize the tree when opening a file
-g.nvim_tree_disable_netrw = 1 -- 1 by default, disables netrw
-g.nvim_tree_hijack_netrw = 1 -- 1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
+g.nvim_tree_disable_netrw = 0 -- 1 by default, disables netrw
+g.nvim_tree_hijack_netrw = 0 -- 1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 g.nvim_tree_add_trailing = 1 -- 0 by default, append a trailing slash to folder names
 g.nvim_tree_group_empty = 1 --  0 by default, compact folders that only contain a single folder into one node in the file tree
 

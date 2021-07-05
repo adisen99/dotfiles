@@ -11,4 +11,9 @@ nvim_lsp.html.setup {
   capabilities = capabilities;
 }
 
+nvim_lsp.cssls.setup {
+	on_attach = on_attach,
+  capabilities = capabilities;
+}
+
 return M

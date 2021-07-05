@@ -40,7 +40,7 @@ o.backup = false
 o.writebackup = false
 o.cmdheight = 2
 o.updatetime = 300
-o.timeoutlen = 100
+o.timeoutlen = 500
 o.listchars='tab:→ ,eol:↲'
 o.equalalways = false
 o.splitright = true
@@ -65,7 +65,7 @@ bo.smartindent = true
 bo.tabstop = 4
 bo.softtabstop = 4
 bo.shiftwidth = 4
-bo.expandtab = false
+bo.expandtab = true
 bo.swapfile = false
 
 -- window options
@@ -76,7 +76,7 @@ wo.cursorline = true
 wo.colorcolumn = '100'
 wo.signcolumn = "yes"
 wo.list = true
-wo.wrap = false
+wo.wrap = true
 -- cmd('highlight ColorColumn ctermbg=0 guibg=darkgrey')
 
 return M

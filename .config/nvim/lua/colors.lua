@@ -2,7 +2,6 @@
 
 local M = {}
 
--- local cmd = vim.cmd
 local g = vim.g
 
 -- Indent blankline settings
@@ -15,10 +14,16 @@ g.indent_blankline_show_trailing_blankline_indent = false ]]
 
 -- jellybeans
 --[[ g.jellybeans_italic_comments = true
-cmd('colorscheme jellybeans-nvim') ]]
+vim.cmd('colorscheme jellybeans-nvim') ]]
 
 -- Codeschool
 g.codeschool_contrast_dark = "hard"
+-- g.codeschool_number_column = "bg0"
+-- g.codeschool_sign_column = "bg0"
+-- g.codeschool_color_column = "bg0"
+-- g.codeschool_invert_selection = 1
+-- g.codeschool_invert_tabline = 1
+g.codeschool_tabline_sel = "blue"
 require('codeschool').setup({
 	plugins = {"netrw", "gitsigns", "nvimtree", "lsp", "telescope", "treesitter"},
 	langs = {"lua", "python", "rust", "markdown"},

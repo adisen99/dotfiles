@@ -15,8 +15,10 @@ map('n', '<Space>', '<NOP>', N)
 g.mapleader = ' '
 
 map('n', '<leader><esc>', ':nohlsearch<cr>', N)
-map('n', '<leader>n', ':bnext<cr>', N)
-map('n', '<leader>p', ':bprev<cr>', N)
+map('n', '<leader>n', ':tabnext<cr>', N)
+map('n', '<leader>p', ':tabprevious<cr>', N)
+--[[ map('n', '<leader>bn', ':bnext<cr>', N)
+map('n', '<leader>bp', ':bprev<cr>', N) ]]
 -- map('n', '<leader>x', ':BufferClose<cr>', N)
 
 -- remove the arrow keys
@@ -54,5 +56,10 @@ map('i', 'jk', '<esc>', N)
 -- Colorizer mapping
 
 map('n', '<leader>3', ':ColorizerToggle<cr>', N)
+
+-- CUstom telescope mappings
+map('n', '<A-e>', ':lua require("nv_telescope").edit_neovim()<cr>', N)
+map('n', '<A-z>', ':lua require("nv_telescope").edit_zsh()<cr>', N)
+map('n', '<A-n>', ':lua require("nv_telescope").edit_neorg()<cr>', N)
 
 return M

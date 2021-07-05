@@ -5,6 +5,7 @@ local M = {}
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
 		"bash",
+    "comment",
 		"fortran",
 		"python",
 		"lua",
@@ -16,6 +17,10 @@ require'nvim-treesitter.configs'.setup {
 		"css",
 		"javascript"
 	},
+	matchup = {
+		enable = true
+	},
+	-- context_commentstring = {enable = true, config = {css = '// %s'}},
   indent = {
     enable = false,
 		-- disable = { "python" }
@@ -31,8 +36,19 @@ require'nvim-treesitter.configs'.setup {
       node_incremental = "grn",
       scope_incremental = "grc",
       node_decremental = "grm",
-    }
-  }
+    },
+  },
+  refactor = {
+    highlight_definitions = { enable = true },
+		highlight_current_scope = { enable = true },
+		smartrename = {
+			enable = true,
+			keymaps = {
+				smart_rename = ",r"
+			}
+		}
+  },
+	autotag = { enable = true }
 }
 
 return M

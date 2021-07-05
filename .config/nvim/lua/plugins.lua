@@ -59,13 +59,20 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	-- treesitter
+	-- treesitter and associated extensions
 	use {
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = function()
 			require('nv_treesitter')
 		end
+	}
+
+	-- treesitter/playground
+	use {
+		"nvim-treesitter/playground",
+		event = "BufRead",
+		disable = true
 	}
 
 	-- snippets
@@ -84,9 +91,22 @@ return require('packer').startup(function(use)
 	use {
 		'adisen99/nvim-hardline',
 		branch = 'custom_colors',
+		event = 'BufRead',
 		config = function()
 			require('nv_hardline')
 		end
+	}
+	-- nvim-tabline
+	use {
+		'crispgm/nvim-tabline',
+		event = 'BufRead',
+		setup = function()
+			vim.o.showtabline = 1
+		end,
+		config = function()
+			require('nv_tabline')
+		end,
+		disable = false
 	}
 
 	-- comments
@@ -152,4 +172,13 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope-fzf-native.nvim',
 		run = 'make',
 	}
+
+  -- Neorg, nvim org mode
+  use {
+    "vhyrro/neorg",
+    event = 'BufRead',
+    config = function()
+      require('nv_org')
+    end
+  }
 end)

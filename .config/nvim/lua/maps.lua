@@ -10,19 +10,16 @@ local N = { noremap = true, silent= true }
 local option = { noremap = true }
 
 -- set leader key and other keymaps
-
 map('n', '<Space>', '<NOP>', N)
 g.mapleader = ' '
 
 map('n', '<leader><esc>', ':nohlsearch<cr>', N)
-map('n', '<leader>n', ':tabnext<cr>', N)
-map('n', '<leader>p', ':tabprevious<cr>', N)
---[[ map('n', '<leader>bn', ':bnext<cr>', N)
-map('n', '<leader>bp', ':bprev<cr>', N) ]]
--- map('n', '<leader>x', ':BufferClose<cr>', N)
+map('n', '<leader>n', ':bnext<cr>', N)
+map('n', '<leader>p', ':bprev<cr>', N)
+map('n', '<Tab>', ':tabnext<cr>', N)
+map('n', '<S-Tab>', ':tabprevious<cr>', N)
 
 -- remove the arrow keys
-
 map('n', '<Down>', '<NOP>', N)
 map('n', '<Up>', '<NOP>', N)
 map('n', '<Right>', '<NOP>', N)
@@ -35,12 +32,10 @@ map('n', '<A-h>', ':vertical resize -2<cr>', N)
 map('n', '<A-l>', ':vertical resize +2<cr>', N)
 
 -- better indexing
-
 map('v', '<', '<gv', N)
 map('v', '>', '>gv', N)
 
 -- navigation
-
 map('n', 'S', ':%s//g<Left><Left>', option)
 map('n', '<leader>h', ':wincmd h<cr>', N)
 map('n', '<leader>j', ':wincmd j<cr>', N)
@@ -54,12 +49,14 @@ map('n', '<C-s>', ':luafile %<cr>', N)
 map('i', 'jk', '<esc>', N)
 
 -- Colorizer mapping
-
 map('n', '<leader>3', ':ColorizerToggle<cr>', N)
 
 -- CUstom telescope mappings
 map('n', '<A-e>', ':lua require("nv_telescope").edit_neovim()<cr>', N)
 map('n', '<A-z>', ':lua require("nv_telescope").edit_zsh()<cr>', N)
 map('n', '<A-n>', ':lua require("nv_telescope").edit_neorg()<cr>', N)
+
+-- The greatest remap ever - courtesy ThePrimeagen
+map('v', '<leader>p', '"_dP', N)
 
 return M

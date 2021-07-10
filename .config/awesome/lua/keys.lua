@@ -61,6 +61,10 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
+    --[[ awful.key({ modkey, "Shift"   }, "m", function () awful.spawn("museeks") end,
+              {description = "open Museeks app", group = "launcher"}), ]]
+    awful.key({ modkey, "Shift"   }, "0", function () awful.spawn("betterlockscreen -l") end,
+              {description = "Start lockscreen", group = "awesome"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "c", awesome.quit,

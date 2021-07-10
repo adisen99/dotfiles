@@ -23,10 +23,17 @@ g.codeschool_contrast_dark = "hard"
 -- g.codeschool_color_column = "bg0"
 -- g.codeschool_invert_selection = 1
 -- g.codeschool_invert_tabline = 1
-g.codeschool_tabline_sel = "blue"
+g.codeschool_tabline_sel = "fg1"
 require('codeschool').setup({
 	plugins = {"netrw", "gitsigns", "nvimtree", "lsp", "telescope", "treesitter"},
 	langs = {"lua", "python", "rust", "markdown"},
 })
 
+-- Railscasts
+--[[ g.railscasts_contrast_dark = "hard"
+g.railscasts_tabline_sel = "blue"
+require('railscasts').setup({
+	plugins = {"netrw", "gitsigns", "nvimtree", "lsp", "telescope", "treesitter"},
+	langs = {"lua", "python", "rust", "markdown"},
+}) ]]
 return M

@@ -2,6 +2,12 @@
 -- after the language server attaches to the current buffer
 
 local M = function(client, bufnr)
+
+  local nvim_exec = function(txt)
+    vim.api.nvim_exec(txt, false)
+  end
+
+  local filetype = vim.api.nvim_buf_get_option(0, "filetype")
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -30,6 +36,33 @@ local M = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
+  -- formatting
+  if filetype == "rust" then
+    vim.cmd [[
+      augroup lsp_buf_format
+        au! BufWritePre <buffer>
+        autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting(nil, 5000)
+      augroup END
+    ]]
+  elseif filetype == "go" then
+    vim.cmd [[
+      augroup lsp_buf_format
+        au! BufWritePre <buffer>
+        autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting()
+      augroup END
+    ]]
+  end
+
+  -- Set autocommands conditional on server_capabilities
+  if client.resolved_capabilities.document_highlight then
+    nvim_exec [[
+      augroup lsp_document_highlight
+        autocmd! * <buffer>
+        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+      augroup END
+    ]]
+  end
 end
 
 return M

@@ -29,11 +29,4 @@ require('codeschool').setup({
 	langs = {"lua", "python", "rust", "markdown"},
 })
 
--- Railscasts
---[[ g.railscasts_contrast_dark = "hard"
-g.railscasts_tabline_sel = "blue"
-require('railscasts').setup({
-	plugins = {"netrw", "gitsigns", "nvimtree", "lsp", "telescope", "treesitter"},
-	langs = {"lua", "python", "rust", "markdown"},
-}) ]]
 return M

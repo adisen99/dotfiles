@@ -6,7 +6,7 @@ require('hardline').setup {
   bufferline = false,  -- enable bufferline
   -- theme = 'codeschool_dark',   -- change theme
   -- theme = 'jellybeans',   -- change theme
-	theme = 'none',
+	theme = 'custom',
 	custom_theme = {
 		text = {gui = "#fbfbfb"},
   	normal = { gui = "#182227"},
@@ -17,7 +17,7 @@ require('hardline').setup {
   	inactive_comment = {gui = "#3f4b52"},
   	inactive_cursor = {gui = "#3f4b52"},
   	inactive_menu = {gui = "#3f4b52"},
-  	command = {gui = "#dda790"},
+  	command = {gui = "#3f4b52"},
   	alt_text = {gui = "#fbfbfb"},
   	warning = {gui = "#e9c062"},
 	},

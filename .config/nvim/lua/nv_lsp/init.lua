@@ -3,6 +3,7 @@
 local M = {}
 
 local nvim_lsp = require('lspconfig')
+local on_init = require('nv_lsp.on_init')
 local on_attach = require('nv_lsp.on_attach')
 local capabilities = require('nv_lsp.capabilities')
 
@@ -12,7 +13,11 @@ local capabilities = require('nv_lsp.capabilities')
 
 local servers = { "pyright", "bashls", "texlab", "vimls" }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach, capabilities = capabilities; }
+  nvim_lsp[lsp].setup {
+    on_init = on_init,
+    on_attach = on_attach,
+    capabilities = capabilities;
+  }
 end
 
 -- reuqiring other language modules
@@ -20,6 +25,7 @@ end
 require('nv_lsp.fortran_lsp')
 require('nv_lsp.lua_lsp')
 require('nv_lsp.rust_lsp')
+require('nv_lsp.go_lsp')
 require('nv_lsp.web_lsp')
 
 -- General configuration

@@ -10,6 +10,7 @@ require'nvim-treesitter.configs'.setup {
 		"python",
 		"lua",
 		"rust",
+    "go",
 		"yaml",
 		"toml",
 		"latex",

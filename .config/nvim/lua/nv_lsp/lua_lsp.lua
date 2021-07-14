@@ -3,6 +3,7 @@
 local M = {}
 
 local nvim_lsp = require('lspconfig')
+local on_init = require("nv_lsp.on_init")
 local on_attach = require('nv_lsp.on_attach')
 local capabilities = require('nv_lsp.capabilities')
 
@@ -22,8 +23,9 @@ local sumneko_root_path = '/home/aditya/.config/nvim/lua-ls/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 
 nvim_lsp.sumneko_lua.setup {
+  on_init=  on_init,
   on_attach = on_attach,
-	capabilities = capabilities;
+  capabilities = capabilities;
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   settings = {
     Lua = {

@@ -2,11 +2,11 @@
 
 local M = {}
 
+vim.cmd [[packadd nvim-lspconfig]]
 local nvim_lsp = require('lspconfig')
 local on_init = require('nv_lsp.on_init')
 local on_attach = require('nv_lsp.on_attach')
 local capabilities = require('nv_lsp.capabilities')
-
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches

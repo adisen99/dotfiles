@@ -13,7 +13,10 @@ end
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+local packer = require('packer')
+local use = packer.use
+
+packer.startup(function()
 	-- Packer can manage itself
 	use {
 		'wbthomason/packer.nvim',
@@ -36,10 +39,14 @@ return require('packer').startup(function(use)
 	-- nvim-tree
 	use {
 		'kyazdani42/nvim-tree.lua',
-		requires = {'kyazdani42/nvim-web-devicons'},
-		keys = {'<leader>e', '<leader>r'},
+		requires = {'kyazdani42/nvim-web-devicons', opt = true},
+		-- keys = {'<leader>e', '<leader>r'},
+    cmd = { 'NvimTreeToggle', 'NvimTreeRefresh', 'NvimTreeOpen' },
+    setup = function()
+      require('nv_tree').setup()
+    end,
 		config = function()
-			require('nv_tree')
+			require('nv_tree').config()
 		end
 	}
 
@@ -62,6 +69,7 @@ return require('packer').startup(function(use)
 	-- treesitter and associated extensions
 	use {
 		"nvim-treesitter/nvim-treesitter",
+    event = { 'BufRead', 'BufNewFile' },
 		run = ":TSUpdate",
 		config = function()
 			require('nv_treesitter')
@@ -71,7 +79,7 @@ return require('packer').startup(function(use)
 	-- treesitter/playground
 	use {
 		"nvim-treesitter/playground",
-		event = "BufRead",
+    after = 'nvim-treesitter',
 		disable = true
 	}
 
@@ -80,7 +88,6 @@ return require('packer').startup(function(use)
 		'hrsh7th/vim-vsnip',
 		requires = {'hrsh7th/vim-vsnip-integ', event = 'InsertEnter'},
 		event = 'InsertEnter',
-		after = 'vim-vsnip-integ',
 		config = function()
 			require('nv_snippets')
 		end
@@ -90,17 +97,31 @@ return require('packer').startup(function(use)
 	-- nvim-hardline
 	use {
 		'ojroques/nvim-hardline',
-		event = 'BufRead',
+    event = 'VimEnter',
 		config = function()
 			require('nv_hardline')
-		end
+		end,
+    disable = true
 	}
+  -- galaxyline
+  use {
+    'glepnir/galaxyline.nvim',
+      branch = 'main',
+      -- lazy load
+      event = 'VimEnter',
+      -- your statusline
+      config = function()
+        require'nv_statusline'
+      end,
+      -- some optional icons
+      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
 	-- nvim-tabline
 	use {
 		'crispgm/nvim-tabline',
-		event = 'BufRead',
+		event = 'VimEnter',
 		setup = function()
-			vim.o.showtabline = 1
+			vim.opt.showtabline = 1
 		end,
 		config = function()
 			require('nv_tabline')
@@ -130,6 +151,7 @@ return require('packer').startup(function(use)
   use {
     'lukas-reineke/indent-blankline.nvim',
     branch = 'lua',
+    event = 'BufRead',
 		disable = true
   }
 
@@ -160,9 +182,11 @@ return require('packer').startup(function(use)
 	  'nvim-telescope/telescope.nvim',
 		requires = {
 			{'nvim-lua/popup.nvim'},
-			{'nvim-lua/plenary.nvim'}
+			{'nvim-lua/plenary.nvim'},
+      {'kyazdani42/nvim-web-devicons', opt = true}
 		},
-		keys = {'<A-p>', '<A-g>', '<A-b>', '<A-h>'},
+		-- keys = {'<A-p>', '<A-g>', '<A-b>', '<A-f>'},
+    event = 'VimEnter',
 		config = function()
 			require('nv_telescope')
 		end
@@ -170,6 +194,10 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope-fzf-native.nvim',
 		run = 'make',
+    after = 'telescope.nvim',
+    config = function()
+      require('telescope').load_extension('fzf')
+    end
 	}
 
   -- Neorg, nvim org mode

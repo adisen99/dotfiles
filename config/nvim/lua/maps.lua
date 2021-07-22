@@ -51,10 +51,13 @@ map('i', 'jk', '<esc>', N)
 -- Colorizer mapping
 map('n', '<leader>3', ':ColorizerToggle<cr>', N)
 
--- CUstom telescope mappings
+-- Custom telescope mappings
 map('n', '<A-e>', ':lua require("nv_telescope").edit_neovim()<cr>', N)
 map('n', '<A-z>', ':lua require("nv_telescope").edit_zsh()<cr>', N)
 map('n', '<A-n>', ':lua require("nv_telescope").edit_neorg()<cr>', N)
+
+-- Terminal mode remap
+map('t', '<Esc>', '<C-\\><C-n>', N)
 
 -- The greatest remap ever - courtesy ThePrimeagen
 map('v', '<leader>p', '"_dP', N)

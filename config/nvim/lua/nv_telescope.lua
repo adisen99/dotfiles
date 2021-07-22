@@ -27,6 +27,9 @@ require('telescope').setup{
 		help_tags = {
 			theme = "ivy"
 		},
+    live_grep = {
+      theme = "ivy"
+    },
   },
 	layout_config = {
     prompt_position = "bottom",
@@ -40,10 +43,6 @@ require('telescope').setup{
     }
   }
 }
-
--- To get fzf loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
 
 -- Custom functions
 
@@ -79,6 +78,7 @@ end
 map('n', '<A-p>', ':lua require("telescope.builtin").find_files()<cr>', N)
 map('n', '<A-g>', ':lua require("telescope.builtin").git_files()<cr>', N)
 map('n', '<A-b>', ':lua require("telescope.builtin").buffers()<cr>', N)
-map('n', '<A-h>', ':lua require("telescope.builtin").help_tags()<cr>', N)
+map('n', '<A-f>', ':lua require("telescope.builtin").live_grep()<cr>', N)
+-- map('n', '<A-h>', ':lua require("telescope.builtin").help_tags()<cr>', N)
 
 return M

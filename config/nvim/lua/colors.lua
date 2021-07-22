@@ -25,7 +25,7 @@ g.codeschool_contrast_dark = "hard"
 -- g.codeschool_invert_tabline = 1
 g.codeschool_tabline_sel = "fg1"
 require('codeschool').setup({
-	plugins = {"netrw", "gitsigns", "nvimtree", "lsp", "telescope", "treesitter"},
+	plugins = {"netrw", "gitsigns", "nvimtree", "lsp", "telescope"},
 	langs = {"lua", "python", "rust", "markdown"},
 })
 

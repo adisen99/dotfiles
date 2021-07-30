@@ -79,14 +79,14 @@ local is_file = function()
   return vim.bo.buftype ~= 'nofile'
 end
 
-local function has_value(tab, val)
+--[[ local function has_value(tab, val)
   for _, v in ipairs(tab) do
     if v[1] == val then
       return true
     end
   end
   return false
-end
+end ]]
 
 gls.left[1] = {
   ViMode = {
@@ -215,7 +215,7 @@ gls.right[5] = {
     provider = { function()
       return '  '
     end, 'LineColumn' },
-    highlight = {colors.white,colors.gray},
+    highlight = {colors.black,colors.blue},
   },
 }
 
@@ -224,7 +224,7 @@ gls.right[6] = {
     provider = { function()
       return '  '
     end, 'LinePercent' },
-    highlight = {colors.white,colors.gray},
+    highlight = {colors.black,colors.blue},
   }
 }
 

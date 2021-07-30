@@ -36,10 +36,18 @@ packer.startup(function()
 		requires = {"rktjmp/lush.nvim"}
 	}
 
-	-- nvim-tree
+	-- file browsing
+
+  -- web devicons
+  use {
+    'kyazdani42/nvim-web-devicons',
+    module = "nvim-web-devicons"
+  }
+
+  -- nvim-tree
 	use {
 		'kyazdani42/nvim-tree.lua',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true},
+		requires = 'nvim-web-devicons',
 		-- keys = {'<leader>e', '<leader>r'},
     cmd = { 'NvimTreeToggle', 'NvimTreeRefresh', 'NvimTreeOpen' },
     setup = function()
@@ -47,8 +55,23 @@ packer.startup(function()
     end,
 		config = function()
 			require('nv_tree').config()
-		end
+		end,
+    disable = true
 	}
+
+  -- lir nvim
+  use {
+    'tamago324/lir.nvim',
+    requires = {
+      {'nvim-web-devicons'},
+      {'tamago324/lir-git-status.nvim'},
+      {'nvim-lua/plenary.nvim'},
+    },
+    config = function()
+      require('nv_lir')
+    end,
+    disable = false
+  }
 
 	-- nvim lsp
 	use {
@@ -96,12 +119,13 @@ packer.startup(function()
 	-- (statusline)
 	-- nvim-hardline
 	use {
-		'ojroques/nvim-hardline',
+		'adisen99/nvim-hardline',
+    branch = 'personal',
     event = 'VimEnter',
 		config = function()
 			require('nv_hardline')
 		end,
-    disable = true
+    disable = false
 	}
   -- galaxyline
   use {
@@ -111,22 +135,20 @@ packer.startup(function()
       event = 'VimEnter',
       -- your statusline
       config = function()
-        require'nv_statusline'
+        require'nv_galaxyline'
       end,
       -- some optional icons
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+      requires = 'nvim-web-devicons',
+      disable = true
   }
 	-- nvim-tabline
 	use {
 		'crispgm/nvim-tabline',
 		event = 'VimEnter',
-		setup = function()
-			vim.opt.showtabline = 1
-		end,
 		config = function()
 			require('nv_tabline')
 		end,
-		disable = false
+		disable = true
 	}
 
 	-- comments
@@ -181,9 +203,9 @@ packer.startup(function()
 	use {
 	  'nvim-telescope/telescope.nvim',
 		requires = {
-			{'nvim-lua/popup.nvim'},
-			{'nvim-lua/plenary.nvim'},
-      {'kyazdani42/nvim-web-devicons', opt = true}
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-web-devicons'}
 		},
 		-- keys = {'<A-p>', '<A-g>', '<A-b>', '<A-f>'},
     event = 'VimEnter',

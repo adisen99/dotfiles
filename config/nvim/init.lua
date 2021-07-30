@@ -13,13 +13,14 @@ vim.g.loaded_remote_plugins = false
 -- General settings and keymappings
 require('general')
 require('maps')
--- Colorschemes
-require('colors')
 -- Get the plugins
 require('plugins')
+-- Tabline
+require('nv_tabline')
+-- Colorschemes
+require('colors')
 
 vim.g.syntax = true
-vim.g.showtabline = 1
 
 -- run packer compile when plugins.lua is updated
 vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])

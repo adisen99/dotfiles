@@ -59,7 +59,8 @@ map('n', '<A-n>', ':lua require("nv_telescope").edit_neorg()<cr>', N)
 -- Terminal mode remap
 map('t', '<Esc>', '<C-\\><C-n>', N)
 
--- The greatest remap ever - courtesy ThePrimeagen
+-- greatest remaps ever - courtesy ThePrimeagen
 map('v', '<leader>p', '"_dP', N)
+map('n', 'Y', 'y$', N)
 
 return M

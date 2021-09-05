@@ -35,6 +35,11 @@ packer.startup(function()
 		branch = 'feature',
 		requires = {"rktjmp/lush.nvim"}
 	}
+	use {
+		'adisen99/apprentice.nvim',
+		branch = 'feature',
+		requires = {"rktjmp/lush.nvim"}
+	}
 
 	-- file browsing
 

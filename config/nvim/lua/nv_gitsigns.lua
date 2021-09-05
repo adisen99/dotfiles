@@ -13,8 +13,14 @@ require('gitsigns').setup {
   numhl = false,
   linehl = false,
 	current_line_blame = false,
-  current_line_blame_delay = 1000,
-  current_line_blame_position = 'eol',
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = 'eol',
+    delay = 1000
+  },
+  current_line_blame_formatter_opts = {
+    relative_time = false
+  },
   keymaps = {
     -- Default keymap options
     noremap = true,

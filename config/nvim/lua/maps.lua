@@ -62,5 +62,7 @@ map('t', '<Esc>', '<C-\\><C-n>', N)
 -- greatest remaps ever - courtesy ThePrimeagen
 map('v', '<leader>p', '"_dP', N)
 map('n', 'Y', 'y$', N)
+map('n', '<C-j>', ':cnext<cr>', N)
+map('n', '<C-k>', ':cprev<cr>', N)
 
 return M

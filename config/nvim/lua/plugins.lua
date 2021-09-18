@@ -86,13 +86,25 @@ packer.startup(function()
 		end
 	}
 	-- autocompletion
-	use {
-		'hrsh7th/nvim-compe',
-		event = "InsertEnter",
-		config = function()
-			require('nv_completion')
-		end
-	}
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('nv_cmp')
+    end,
+    requires = {
+      -- "L3MON4D3/LuaSnip",
+      -- "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-calc",
+      "kdheepak/cmp-latex-symbols",
+      -- {'tzachar/cmp-tabnine', run = './install.sh'}
+    },
+    disable = false
+  }
 
 	-- treesitter and associated extensions
 	use {
@@ -118,7 +130,8 @@ packer.startup(function()
 		event = 'InsertEnter',
 		config = function()
 			require('nv_snippets')
-		end
+		end,
+    disable = false
 	}
 
 	-- (statusline)
@@ -168,7 +181,7 @@ packer.startup(function()
 	-- autopairing bracket
 	use {
 		'windwp/nvim-autopairs',
-		after = 'nvim-compe',
+		after = 'nvim-cmp',
 		config = function()
 			require('nv_autopairs')
 		end

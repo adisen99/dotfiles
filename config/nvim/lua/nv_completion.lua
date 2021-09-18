@@ -27,6 +27,7 @@ require'compe'.setup {
     -- nvim_lua = false,
     -- spell = {kind = "   (Spell)"},
     tags = false,
+    neorg = true,
   };
 }
 

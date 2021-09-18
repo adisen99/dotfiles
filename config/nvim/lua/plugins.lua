@@ -27,7 +27,7 @@ packer.startup(function()
 	-- use 'metalelf0/jellybeans-nvim' -- jellybeans
 	use {
 		'adisen99/jellybeans-nvim',
-		branch = 'testing',
+		branch = 'personal',
 		requires = {'rktjmp/lush.nvim'}
 	}
 	use {
@@ -230,7 +230,7 @@ packer.startup(function()
   -- Neorg, nvim org mode
   use {
     "vhyrro/neorg",
-    event = 'BufRead',
+    requires = {'nvim-lua/plenary.nvim'},
     config = function()
       require('nv_org')
     end

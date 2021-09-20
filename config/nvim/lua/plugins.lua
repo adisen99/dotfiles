@@ -40,6 +40,7 @@ packer.startup(function()
 		branch = 'feature',
 		requires = {"rktjmp/lush.nvim"}
 	}
+  use 'Mofiqul/vscode.nvim'
 
 	-- file browsing
 
@@ -88,20 +89,22 @@ packer.startup(function()
 	-- autocompletion
   use {
     'hrsh7th/nvim-cmp',
+    event = "InsertEnter",
     config = function()
       require('nv_cmp')
     end,
     requires = {
-      -- "L3MON4D3/LuaSnip",
-      -- "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-vsnip",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-calc",
-      "kdheepak/cmp-latex-symbols",
-      -- {'tzachar/cmp-tabnine', run = './install.sh'}
+      {"onsails/lspkind-nvim"},
+      -- {"L3MON4D3/LuaSnip", after = "nvim-cmp"},
+      -- {"saadparwaiz1/cmp_luasnip", after = "nvim-cmp"},
+      {"hrsh7th/cmp-buffer", after = "nvim-cmp"},
+      {"hrsh7th/cmp-vsnip", after = "nvim-cmp"},
+      {"hrsh7th/cmp-nvim-lsp", after = "nvim-cmp"},
+      {"hrsh7th/cmp-path", after = "nvim-cmp"},
+      {"hrsh7th/cmp-nvim-lua", after = "nvim-cmp"},
+      {"hrsh7th/cmp-calc", after = "nvim-cmp"},
+      {"kdheepak/cmp-latex-symbols", after = "nvim-cmp"},
+      -- {'tzachar/cmp-tabnine', run = './install.sh', after = "nvim-cmp"}
     },
     disable = false
   }

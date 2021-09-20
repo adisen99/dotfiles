@@ -18,6 +18,9 @@ require'nvim-treesitter.configs'.setup {
 		"css",
 		"javascript"
 	},
+  autopairs = {
+    enable = true
+  },
 	matchup = {
 		enable = true
 	},

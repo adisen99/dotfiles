@@ -8,7 +8,7 @@ You are welcome to use any of the configs but please be careful as to what to ke
 
 ### TODO
 
-- [ ] try to make lazy load of nvim-cmp and associated plugins
+- [x] try to make lazy load of nvim-cmp and associated plugins
 - [ ] replace vsnip with luasnip
 
 ## HAPPY CODING :)

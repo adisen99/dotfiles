@@ -219,6 +219,14 @@ packer.startup(function()
 			require('nv_gitsigns')
 		end
   }
+  use {
+    'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim',
+    event = 'BufRead',
+    config = function()
+      require('nv_neogit')
+    end
+  }
 
   -- fuzzy search using telescope
 	use {

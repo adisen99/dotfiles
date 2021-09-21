@@ -31,15 +31,15 @@ require('lush')(require('codeschool').setup({
 })) ]]
 
 -- Appretice
---[[ g.apprentice_contrast_dark = "hard"
+g.apprentice_contrast_dark = "hard"
 g.apprentice_tabline_sel = "fg0"
 require('lush')(require('apprentice').setup({
 	plugins = {"netrw", "gitsigns", "nvimtree", "lsp", "telescope"},
 	langs = {"lua", "python", "rust", "markdown", "viml"},
-})) ]]
+}))
 
 -- Vscode theme
-vim.g.vscode_style = "dark"
-vim.cmd[[colorscheme vscode]]
+--[[ vim.g.vscode_style = "dark"
+vim.cmd('colorscheme vscode') ]]
 
 return M

@@ -46,7 +46,7 @@ map('n', '<leader>z', ':sp<cr>', N)
 map('n', '<leader>b', ':buffers<cr>:b', N)
 map('n', '<leader>x', ':%bd|e#<cr>', N) -- delete all inactive buffers at once
 map('n', '<C-s>', ':luafile %<cr>', N)
-map('i', 'jk', '<esc>', N)
+-- map('i', 'jk', '<esc>', N) -- using better-escape.nvim plugin
 
 -- Colorizer mapping
 map('n', '<leader>3', ':ColorizerToggle<cr>', N)

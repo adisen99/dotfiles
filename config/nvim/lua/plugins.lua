@@ -21,7 +21,15 @@ packer.startup(function()
 	use {
 		'wbthomason/packer.nvim',
 		opt = true
-}
+  }
+
+  -- better-escape.nvim
+  use {
+    "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup()
+    end,
+  }
 
 	-- colorscheme
 	-- use 'metalelf0/jellybeans-nvim' -- jellybeans

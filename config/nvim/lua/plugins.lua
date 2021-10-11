@@ -36,23 +36,21 @@ packer.startup(function()
   }
 
 	-- colorscheme
-	-- use 'metalelf0/jellybeans-nvim' -- jellybeans
 	use {
 		'adisen99/jellybeans-nvim',
 		branch = 'personal',
-		requires = {'rktjmp/lush.nvim'}
+    requires = {'rktjmp/lush.nvim'},
 	}
 	use {
 		'adisen99/codeschool.nvim',
 		branch = 'feature',
-		requires = {"rktjmp/lush.nvim"}
+    requires = {'rktjmp/lush.nvim'},
 	}
 	use {
 		'adisen99/apprentice.nvim',
 		branch = 'feature',
-		requires = {"rktjmp/lush.nvim"}
+    requires = {'rktjmp/lush.nvim'},
 	}
-  use 'Mofiqul/vscode.nvim'
 
 	-- file browsing
 

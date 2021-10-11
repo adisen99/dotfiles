@@ -8,7 +8,7 @@ local lspkind = require('lspkind')
 -- local luasnip = require 'luasnip'
 -- require("luasnip/loaders/from_vscode").lazy_load()
 
-local check_back_space = function()
+--[[ local check_back_space = function()
     local col = vim.fn.col('.') - 1
     if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
         return true
@@ -19,7 +19,7 @@ end
 
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
+end ]]
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -53,32 +53,20 @@ cmp.setup {
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ["<Tab>"] = cmp.mapping(function()
-      if vim.fn.pumvisible() == 1 then
-        vim.fn.feedkeys(t "<C-n>", "n")
-      --[[ elseif luasnip.expand_or_jumpable() then
-        vim.fn.feedkeys(t "<Plug>luasnip-expand-or-jump", "") ]]
-      elseif check_back_space() then
-        vim.fn.feedkeys(t "<Tab>", "n")
-      else
-        vim.fn.feedkeys(t "<Tab>", "n")
-      end
-    end, {
-      "i",
-      "s",
-    }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if vim.fn.pumvisible() == 1 then
-        vim.fn.feedkeys(t "<C-p>", "n")
-      --[[ elseif luasnip.jumpable(-1) then
-        vim.fn.feedkeys(t "<Plug>luasnip-jump-prev", "") ]]
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end,
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm {

@@ -172,15 +172,13 @@ packer.startup(function()
       requires = 'nvim-web-devicons',
       disable = true
   }
-	-- nvim-tabline
-	use {
-		'crispgm/nvim-tabline',
-		event = 'VimEnter',
-		config = function()
-			require('nv_tabline')
-		end,
-		disable = true
-	}
+	-- tabline
+  use {
+    'alvarosevilla95/luatab.nvim',
+    event = 'VimEnter',
+    requires='nvim-web-devicons',
+    disable = false,
+  }
 
 	-- comments
 	use {

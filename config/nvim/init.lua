@@ -15,8 +15,6 @@ require('general')
 require('maps')
 -- Get the plugins
 require('plugins')
--- Tabline
-require('nv_tabline')
 -- Colorschemes
 require('colors')
 

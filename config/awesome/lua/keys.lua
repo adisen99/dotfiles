@@ -106,6 +106,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "d",     function () awful.util.spawn("dmenu_run") end,
               {description = "dmenu run prompt", group = "launcher"}),
 
+    awful.key({ modkey },            "r",     function () awful.util.spawn("rofi -combi-modi window,drun,ssh -theme Arc-Dark -show combi -show-icons") end,
+              {description = "rofi run prompt", group = "launcher"}),
+
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run {

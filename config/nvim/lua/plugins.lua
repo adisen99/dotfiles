@@ -265,6 +265,14 @@ packer.startup(function()
     requires = {'nvim-lua/plenary.nvim'},
     config = function()
       require('nv_org')
-    end
+    end,
+    disable = true
+  }
+  -- Gkeep
+  use {
+    'stevearc/gkeep.nvim',
+    run = ':UpdateRemotePlugins',
+    cmd = 'GkeepToggle right',
+    disable = true
   }
 end)

@@ -28,6 +28,15 @@ require('nv_lsp.rust_lsp')
 require('nv_lsp.go_lsp')
 require('nv_lsp.web_lsp')
 
+-- use the same configuration you would use for `vim.lsp.diagnostic.on_publish_diagnostics`.
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  require('lsp_extensions.workspace.diagnostic').handler, {
+    signs = {
+      severity_limit = "Error",
+    }
+  }
+)
+
 -- General configuration
 
 -- redifining the singcolumn icons

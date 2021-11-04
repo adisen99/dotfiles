@@ -29,16 +29,16 @@ cmp.setup {
       vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
       -- setting name for each source
       vim_item.menu = ({
+        nvim_lua = "[Lua]",
         nvim_lsp = "[LSP]",
-        -- emoji = "[Emoji]",
         path = "[Path]",
-        calc = "[Calc]",
-        -- cmp_tabnine = "[Tabnine]",
         vsnip = "[Snippet]",
         -- luasnip = "(Snippet)",
         buffer = "[Buffer]",
-        nvim_lua = "[Lua]",
         latex_symbols = "[Latex]",
+        calc = "[Calc]",
+        -- cmp_tabnine = "[Tabnine]",
+        -- emoji = "[Emoji]",
       })[entry.source.name]
       return vim_item
     end,
@@ -75,18 +75,22 @@ cmp.setup {
     },
   },
   sources = {
+    { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'vsnip' },
-    -- { name = 'cmp_tabnine' },
-    { name = 'nvim_lua' },
-    { name = "buffer" },
-    { name = "calc" },
-    -- { name = "emoji" },
-    -- { name = "treesitter" },
+    { name = "buffer", keyword_length = 5 },
     { name = "latex_symbols" },
+    -- { name = "treesitter" },
+    { name = "calc" },
+    -- { name = 'cmp_tabnine' },
     -- { name = "crates" },
+    -- { name = "emoji" },
   },
+  experimental = {
+    native_menu = false,
+    ghost_text = false
+  }
 }
 
 return M

@@ -51,6 +51,15 @@ packer.startup(function()
 		branch = 'feature',
     requires = {'rktjmp/lush.nvim'},
 	}
+  use {
+    'adisen99/nvim-base16',
+    branch = 'personal',
+    disable = true
+  }
+
+  use {
+    'ishan9299/modus-theme-vim'
+  }
 
 	-- file browsing
 
@@ -58,6 +67,11 @@ packer.startup(function()
   use {
     'kyazdani42/nvim-web-devicons',
     module = "nvim-web-devicons"
+  }
+
+  use {
+  'yamatsum/nvim-nonicons',
+  requires = {'nvim-web-devicons'}
   }
 
   -- nvim-tree
@@ -96,6 +110,9 @@ packer.startup(function()
 			require('nv_lsp')
 		end
 	}
+  use {
+    'nvim-lua/lsp_extensions.nvim'
+  }
 	-- autocompletion
   use {
     'hrsh7th/nvim-cmp',
@@ -166,12 +183,22 @@ packer.startup(function()
       event = 'VimEnter',
       -- your statusline
       config = function()
-        require'nv_galaxyline'
+        require('nv_galaxyline')
       end,
       -- some optional icons
       requires = 'nvim-web-devicons',
       disable = true
   }
+  -- expressline
+  use {
+    'tjdevries/express_line.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('nv_expressline')
+    end,
+    disable = true
+  }
+
 	-- tabline
   use {
     'alvarosevilla95/luatab.nvim',

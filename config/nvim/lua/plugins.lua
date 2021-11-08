@@ -204,6 +204,9 @@ packer.startup(function()
     'alvarosevilla95/luatab.nvim',
     event = 'VimEnter',
     requires='nvim-web-devicons',
+    config = function()
+      require('luatab').setup({})
+    end,
     disable = false,
   }
 

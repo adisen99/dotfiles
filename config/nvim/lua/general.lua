@@ -47,7 +47,7 @@ o.splitright = true
 o.splitbelow = true
 o.inccommand = 'split'
 o.joinspaces = false
-o.tabline = '%!v:lua.require\'luatab\'.tabline()'
+-- o.tabline = '%!v:lua.require\'luatab\'.tabline()'
 
 opt.formatoptions = opt.formatoptions
   - "a" -- Auto formatting is BAD.

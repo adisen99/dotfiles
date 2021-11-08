@@ -2,7 +2,7 @@
 
 local M = {}
 
---[[ local codeshcool = {
+local codeshcool = {
   white = "#fbfbfb",
   light_gray = '#555e61',
   gray = "#2e373b",
@@ -14,7 +14,7 @@ local M = {}
   yellow = "#e9c062",
   purple = "#bfabcb",
   cool = '#87afd7'
-} ]]
+}
 
 --[[ local apprentice = {
   white = "#fbfbfb",
@@ -30,7 +30,7 @@ local M = {}
   cool = '#5fafaf'
 } ]]
 
-local modus = {
+--[[ local modus = {
   white = "#e0e6f0",
   light_gray = "#a8a8a8",
   grey = "#323232",
@@ -42,7 +42,7 @@ local modus = {
   yellow = "#d2b580",
   purple = "#e0b2d6",
   cool = "#92baff"
-}
+} ]]
 
 local sections = {         -- define sections
     {class = 'mode_cool', item = require('hardline.parts.mode').get_item},
@@ -61,7 +61,7 @@ local sections = {         -- define sections
 }
 
 require('hardline').setup {
-  theme = modus,
+  theme = codeshcool,
   sections = sections
 }
 

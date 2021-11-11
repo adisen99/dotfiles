@@ -3,35 +3,35 @@
 local M = {}
 
 require'nvim-treesitter.configs'.setup {
-	ensure_installed = {
-		"bash",
+  ensure_installed = {
+    "bash",
     "comment",
-		"fortran",
-		"python",
-		"lua",
-		"rust",
+    "fortran",
+    "python",
+    "lua",
+    "rust",
     "go",
-		"yaml",
-		"toml",
-		"latex",
-		"html",
-		"css",
-		"javascript"
-	},
+    "yaml",
+    "toml",
+    "latex",
+    "html",
+    "css",
+    "javascript"
+  },
   autopairs = {
     enable = true
   },
-	matchup = {
-		enable = true
-	},
-	-- context_commentstring = {enable = true, config = {css = '// %s'}},
+  matchup = {
+    enable = true
+  },
+  -- context_commentstring = {enable = true, config = {css = '// %s'}},
   indent = {
     enable = false,
-		-- disable = { "python" }
+    -- disable = { "python" }
   },
   highlight = {
     enable = true,
-		-- disable = { "fortran", "latex" }
+    -- disable = { "fortran", "latex" }
   },
   incremental_selection = {
     enable = true,
@@ -44,15 +44,15 @@ require'nvim-treesitter.configs'.setup {
   },
   refactor = {
     highlight_definitions = { enable = true },
-		highlight_current_scope = { enable = true },
-		smartrename = {
-			enable = true,
-			keymaps = {
-				smart_rename = ",r"
-			}
-		}
+    highlight_current_scope = { enable = true },
+    smartrename = {
+      enable = true,
+      keymaps = {
+        smart_rename = ",r"
+      }
+    }
   },
-	autotag = { enable = true }
+  autotag = { enable = true }
 }
 
 return M

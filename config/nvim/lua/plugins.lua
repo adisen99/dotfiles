@@ -17,10 +17,10 @@ local packer = require('packer')
 local use = packer.use
 
 packer.startup(function()
-	-- Packer can manage itself
-	use {
-		'wbthomason/packer.nvim',
-		opt = true
+  -- Packer can manage itself
+  use {
+    'wbthomason/packer.nvim',
+    opt = true
   }
 
   -- better-escape.nvim
@@ -35,22 +35,22 @@ packer.startup(function()
     end,
   }
 
-	-- colorscheme
-	use {
-		'adisen99/jellybeans-nvim',
-		branch = 'personal',
+  -- colorscheme
+  use {
+    'adisen99/jellybeans-nvim',
+    branch = 'personal',
     requires = {'rktjmp/lush.nvim'},
-	}
-	use {
-		'adisen99/codeschool.nvim',
-		branch = 'feature',
+  }
+  use {
+    'adisen99/codeschool.nvim',
+    branch = 'feature',
     requires = {'rktjmp/lush.nvim'},
-	}
-	use {
-		'adisen99/apprentice.nvim',
-		branch = 'feature',
+  }
+  use {
+    'adisen99/apprentice.nvim',
+    branch = 'feature',
     requires = {'rktjmp/lush.nvim'},
-	}
+  }
   use {
     'adisen99/nvim-base16',
     branch = 'personal',
@@ -61,7 +61,7 @@ packer.startup(function()
     'ishan9299/modus-theme-vim'
   }
 
-	-- file browsing
+  -- file browsing
 
   -- web devicons
   use {
@@ -75,19 +75,19 @@ packer.startup(function()
   }
 
   -- nvim-tree
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = 'nvim-web-devicons',
-		-- keys = {'<leader>e', '<leader>r'},
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'nvim-web-devicons',
+    -- keys = {'<leader>e', '<leader>r'},
     cmd = { 'NvimTreeToggle', 'NvimTreeRefresh', 'NvimTreeOpen' },
     setup = function()
       require('nv_tree').setup()
     end,
-		config = function()
-			require('nv_tree').config()
-		end,
+    config = function()
+      require('nv_tree').config()
+    end,
     disable = true
-	}
+  }
 
   -- lir nvim
   use {
@@ -103,17 +103,17 @@ packer.startup(function()
     disable = false
   }
 
-	-- nvim lsp
-	use {
-		'neovim/nvim-lspconfig',
-		config = function()
-			require('nv_lsp')
-		end
-	}
+  -- nvim lsp
+  use {
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('nv_lsp')
+    end
+  }
   use {
     'nvim-lua/lsp_extensions.nvim'
   }
-	-- autocompletion
+  -- autocompletion
   use {
     'hrsh7th/nvim-cmp',
     event = "InsertEnter",
@@ -136,45 +136,45 @@ packer.startup(function()
     disable = false
   }
 
-	-- treesitter and associated extensions
-	use {
-		"nvim-treesitter/nvim-treesitter",
+  -- treesitter and associated extensions
+  use {
+    "nvim-treesitter/nvim-treesitter",
     event = { 'BufRead', 'BufNewFile' },
-		run = ":TSUpdate",
-		config = function()
-			require('nv_treesitter')
-		end
-	}
+    run = ":TSUpdate",
+    config = function()
+      require('nv_treesitter')
+    end
+  }
 
-	-- treesitter/playground
-	use {
-		"nvim-treesitter/playground",
+  -- treesitter/playground
+  use {
+    "nvim-treesitter/playground",
     after = 'nvim-treesitter',
-		disable = true
-	}
+    disable = true
+  }
 
-	-- snippets
-	use {
-		'hrsh7th/vim-vsnip',
-		requires = {'hrsh7th/vim-vsnip-integ', event = 'InsertEnter'},
-		event = 'InsertEnter',
-		config = function()
-			require('nv_snippets')
-		end,
+  -- snippets
+  use {
+    'hrsh7th/vim-vsnip',
+    requires = {'hrsh7th/vim-vsnip-integ', event = 'InsertEnter'},
+    event = 'InsertEnter',
+    config = function()
+      require('nv_snippets')
+    end,
     disable = false
-	}
+  }
 
-	-- (statusline)
-	-- nvim-hardline
-	use {
-		'adisen99/nvim-hardline',
+  -- (statusline)
+  -- nvim-hardline
+  use {
+    'adisen99/nvim-hardline',
     branch = 'personal',
     event = 'VimEnter',
-		config = function()
-			require('nv_hardline')
-		end,
+    config = function()
+      require('nv_hardline')
+    end,
     disable = false
-	}
+  }
   -- galaxyline
   use {
     'glepnir/galaxyline.nvim',
@@ -199,7 +199,7 @@ packer.startup(function()
     disable = true
   }
 
-	-- tabline
+  -- tabline
   use {
     'alvarosevilla95/luatab.nvim',
     event = 'VimEnter',
@@ -210,41 +210,41 @@ packer.startup(function()
     disable = false,
   }
 
-	-- comments
-	use {
-		'b3nj5m1n/kommentary',
-		keys = {'<leader>/', '<leader>c'},
-		config = function()
-			require('nv_kommentary')
-		end
-	}
+  -- comments
+  use {
+    'b3nj5m1n/kommentary',
+    keys = {'<leader>/', '<leader>c'},
+    config = function()
+      require('nv_kommentary')
+    end
+  }
 
-	-- autopairing bracket
-	use {
-		'windwp/nvim-autopairs',
-		after = 'nvim-cmp',
-		config = function()
-			require('nv_autopairs')
-		end
-	}
+  -- autopairing bracket
+  use {
+    'windwp/nvim-autopairs',
+    after = 'nvim-cmp',
+    config = function()
+      require('nv_autopairs')
+    end
+  }
 
-	-- indent blankline
+  -- indent blankline
   use {
     'lukas-reineke/indent-blankline.nvim',
     branch = 'lua',
     event = 'BufRead',
-		disable = true
+    disable = true
   }
 
   -- Colorizer
   use {
-		'norcalli/nvim-colorizer.lua',
-		cmd = 'ColorizerToggle',
-		config = function ()
-			require('colorizer').setup()
-			vim.cmd('ColorizerReloadAllBuffers')
-		end
-	}
+    'norcalli/nvim-colorizer.lua',
+    cmd = 'ColorizerToggle',
+    config = function ()
+      require('colorizer').setup()
+      vim.cmd('ColorizerReloadAllBuffers')
+    end
+  }
 
   -- Git integration
   use {
@@ -252,10 +252,10 @@ packer.startup(function()
     requires = {
       'nvim-lua/plenary.nvim'
     },
-		event = 'BufRead',
-		config = function()
-			require('nv_gitsigns')
-		end
+    event = 'BufRead',
+    config = function()
+      require('nv_gitsigns')
+    end
   }
   use {
     'TimUntersberger/neogit',
@@ -267,27 +267,27 @@ packer.startup(function()
   }
 
   -- fuzzy search using telescope
-	use {
-	  'nvim-telescope/telescope.nvim',
-		requires = {
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
       {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'},
       {'nvim-web-devicons'}
-		},
-		-- keys = {'<A-p>', '<A-g>', '<A-b>', '<A-f>'},
+    },
+    -- keys = {'<A-p>', '<A-g>', '<A-b>', '<A-f>'},
     event = 'VimEnter',
-		config = function()
-			require('nv_telescope')
-		end
-	}
-	use {
-		'nvim-telescope/telescope-fzf-native.nvim',
-		run = 'make',
+    config = function()
+      require('nv_telescope')
+    end
+  }
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make',
     after = 'telescope.nvim',
     config = function()
       require('telescope').load_extension('fzf')
     end
-	}
+  }
 
   -- Neorg, nvim org mode
   use {

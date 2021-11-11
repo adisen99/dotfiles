@@ -28,26 +28,26 @@ function M.config()
   g.nvim_tree_group_empty = 1 --  0 by default, compact folders that only contain a single folder into one node in the file tree
 
   g.nvim_tree_icons = {
-  	default = '',
+    default = '',
     symlink = '',
     git= {
-  		unstaged = "M",
-    	staged = "S",
-    	unmerged = "",
-    	renamed = "R",
-    	untracked = "U",
-    	deleted = "",
-    	ignored = "◌"
+      unstaged = "M",
+      staged = "S",
+      unmerged = "",
+      renamed = "R",
+      untracked = "U",
+      deleted = "",
+      ignored = "◌"
     },
     folder= {
-  		arrow_open = "",
-    	arrow_closed = "",
-    	default = "",
-    	open = "",
-    	empty = "",
-    	empty_open = "",
-    	symlink = "",
-    	symlink_open = "",
+      arrow_open = "",
+      arrow_closed = "",
+      default = "",
+      open = "",
+      empty = "",
+      empty_open = "",
+      symlink = "",
+      symlink_open = "",
     },
     lsp = {
        hint = "",

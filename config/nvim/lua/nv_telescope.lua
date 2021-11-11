@@ -17,23 +17,23 @@ require('telescope').setup{
       sort_lastused = true,
       theme = "ivy",
       previewer = false,
-		},
+    },
     find_files = {
       theme = "ivy"
     },
     git_files = {
       theme = "ivy"
     },
-		help_tags = {
-			theme = "ivy"
-		},
+    help_tags = {
+      theme = "ivy"
+    },
     live_grep = {
       theme = "ivy"
     },
   },
-	layout_config = {
+  layout_config = {
     prompt_position = "bottom",
-	},
+  },
   extensions = {
     fzf = {
       fuzzy = true,                    -- false will only do exact matching

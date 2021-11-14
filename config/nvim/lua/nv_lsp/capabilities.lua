@@ -2,6 +2,7 @@
 
 -- Add additional capabilities supported by nvim-cmp
 
+local lspstatus = require('lsp-status')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -9,6 +10,7 @@ capabilities.textDocument.completion.completionItem.documentationFormat = { 'mar
 capabilities.textDocument.codeLens = {
   dynamicRegistration = false,
 }
+capabilities = vim.tbl_extend("keep", capabilities, lspstatus.capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.preselectSupport = true
 capabilities.textDocument.completion.completionItem.insertReplaceSupport = true

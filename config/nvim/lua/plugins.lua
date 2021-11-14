@@ -113,6 +113,9 @@ packer.startup(function()
   use {
     'nvim-lua/lsp_extensions.nvim'
   }
+  use {
+    'nvim-lua/lsp-status.nvim'
+  }
   -- autocompletion
   use {
     'hrsh7th/nvim-cmp',
@@ -215,8 +218,17 @@ packer.startup(function()
     'b3nj5m1n/kommentary',
     keys = {'<leader>/', '<leader>c'},
     config = function()
-      require('nv_kommentary')
-    end
+      require('nv_comments')
+    end,
+    disable = false
+  }
+  use {
+    'numToStr/Comment.nvim',
+    keys = {'<leader>/', '<leader>c'},
+    config = function()
+        require('nv_comments')
+    end,
+    disable = true
   }
 
   -- autopairing bracket

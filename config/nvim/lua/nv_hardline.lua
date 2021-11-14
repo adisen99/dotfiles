@@ -54,6 +54,7 @@ local sections = {         -- define sections
     '%<',
     {class = 'cool', item = '%='},
     {class = 'cool', item = require('hardline.parts.wordcount').get_item, hide = 100},
+    {class = 'cool', item = require('hardline.parts.server_progress').get_item, hide=80},
     {class = 'cool', item = require('hardline.parts.lsp').get_error},
     {class = 'cool', item = require('hardline.parts.lsp').get_warning},
     {class = 'cool', item = require('hardline.parts.whitespace').get_item},

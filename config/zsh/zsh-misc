@@ -1,6 +1,6 @@
 ## Using fortune to echo quotes
-#echo " "
-#fortune ~/.config/quotes/quotes
+fortune ~/.config/quotes/quotes
+echo " "
 
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
 

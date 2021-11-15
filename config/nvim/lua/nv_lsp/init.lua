@@ -31,15 +31,6 @@ require('nv_lsp.rust_lsp')
 require('nv_lsp.go_lsp')
 require('nv_lsp.web_lsp')
 
--- use the same configuration you would use for `vim.lsp.diagnostic.on_publish_diagnostics`.
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  require('lsp_extensions.workspace.diagnostic').handler, {
-    signs = {
-      severity_limit = "Error",
-    }
-  }
-)
-
 -- General configuration
 
 -- redifining the singcolumn icons
@@ -60,34 +51,5 @@ vim.fn.sign_define(
     "LspDiagnosticsSignInformation",
     {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
 ) ]]
-
--- symbols for autocomplete
---[[ vim.lsp.protocol.CompletionItemKind = {
-  "   (Text) ",
-  "   (Method)",
-  "   (Function)",
-  "   (Constructor)",
-  "   (Field)",
-  "   (Variable)",
-  "   (Class)",
-  " ﰮ  (Interface)",
-  "   (Module)",
-  "   (Property)",
-  " 塞 (Unit)",
-  "   (Value)",
-  " 練 (Enum)",
-  "   (Keyword)",
-  "   (Snippet)",
-  "   (Color)",
-  "   (File)",
-  "   (Reference)",
-  "   (Folder)",
-  "   (EnumMember)",
-  " ﲀ  (Constant)",
-  "   (Struct)",
-  "   (Event)",
-  "   (Operator)",
-  "   (TypeParameter)",
-} ]]
 
 return M

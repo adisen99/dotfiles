@@ -56,7 +56,10 @@ packer.startup(function()
     branch = 'personal',
     disable = true
   }
-
+  use {
+    'RishabhRD/gruvy',
+    requires = {'rktjmp/lush.nvim'}
+  }
   use {
     'ishan9299/modus-theme-vim'
   }

@@ -31,12 +31,15 @@ require('lush')(require('codeschool').setup({
 })) ]]
 
 -- Appretice
-g.apprentice_contrast_dark = "hard"
+--[[ g.apprentice_contrast_dark = "hard"
 g.apprentice_tabline_sel = "fg0"
 require('lush')(require('apprentice').setup({
 	plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope"},
 	langs = {"lua", "python", "rust", "markdown", "viml", "golang"},
-}))
+})) ]]
+
+-- Gruvy
+vim.cmd('colorscheme gruvy')
 
 -- nvim-base16
 -- vim.cmd('colorscheme base16-tomorrow-night')

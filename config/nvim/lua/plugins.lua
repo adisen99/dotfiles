@@ -57,8 +57,10 @@ packer.startup(function()
     disable = true
   }
   use {
-    'RishabhRD/gruvy',
-    requires = {'rktjmp/lush.nvim'}
+    'adisen99/gruvy',
+    branch = 'personal',
+    requires = {'rktjmp/lush.nvim'},
+    disable = false
   }
   use {
     'ishan9299/modus-theme-vim'
@@ -240,7 +242,8 @@ packer.startup(function()
     after = 'nvim-cmp',
     config = function()
       require('nv_autopairs')
-    end
+    end,
+    disable = false
   }
 
   -- indent blankline
@@ -307,17 +310,38 @@ packer.startup(function()
   -- Neorg, nvim org mode
   use {
     "vhyrro/neorg",
+    branch = "unstable",
     requires = {'nvim-lua/plenary.nvim'},
     config = function()
       require('nv_org')
     end,
     disable = true
   }
+
   -- Gkeep
   use {
     'stevearc/gkeep.nvim',
     run = ':UpdateRemotePlugins',
     cmd = 'GkeepToggle right',
+    disable = true
+  }
+
+  -- extra stuff
+  -- tpope is a God
+  use {
+    'tpope/vim-scriptease',
+    cmd = {
+      "Messages",
+      "Verbose",
+      "Time"
+    }
+  }
+  -- copilot
+  use {
+    'github/copilot.vim',
+    cmd = {
+      "Copilot"
+    },
     disable = true
   }
 end)

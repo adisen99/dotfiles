@@ -13,8 +13,8 @@ g.indent_blankline_show_trailing_blankline_indent = false ]]
 -- g.indent_blankline_char = '|'
 
 -- jellybeans
---[[ g.jellybeans_italic_comments = true
-vim.cmd('colorscheme jellybeans-nvim') ]]
+g.jellybeans_italic_comments = true
+vim.cmd('colorscheme jellybeans-nvim')
 
 -- Codeschool
 -- g.codeschool_number_column = "bg0"
@@ -26,20 +26,20 @@ vim.cmd('colorscheme jellybeans-nvim') ]]
 --[[ g.codeschool_contrast_dark = "hard"
 g.codeschool_tabline_sel = "fg0"
 require('lush')(require('codeschool').setup({
-	plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope"},
-	langs = {"lua", "python", "rust", "markdown", "viml", "golang"},
+  plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer"},
+  langs = {"lua", "python", "rust", "markdown", "viml", "golang"},
 })) ]]
 
 -- Appretice
 --[[ g.apprentice_contrast_dark = "hard"
 g.apprentice_tabline_sel = "fg0"
 require('lush')(require('apprentice').setup({
-	plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope"},
-	langs = {"lua", "python", "rust", "markdown", "viml", "golang"},
+  plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer"},
+  langs = {"lua", "python", "rust", "markdown", "viml", "golang"},
 })) ]]
 
 -- Gruvy
-vim.cmd('colorscheme gruvy')
+-- vim.cmd('colorscheme gruvy')
 
 -- nvim-base16
 -- vim.cmd('colorscheme base16-tomorrow-night')
@@ -50,5 +50,28 @@ vim.cmd('colorscheme gruvy')
 g.modus_faint_syntax = 1
 g.modus_cursorline_intense = 1
 vim.cmd('colorscheme modus-vivendi') ]]
+
+-- Kanagawa theme
+
+--[[ local colors = {
+  sumiInk1 = "#111111",
+  fujiWhite = "#f0f0f0"
+}
+
+require('kanagawa').setup({
+    undercurl = true,           -- enable undercurls
+    commentStyle = "italic",
+    functionStyle = "NONE",
+    keywordStyle = "italic",
+    statementStyle = "bold",
+    variablebuiltinStyle = "italic",
+    specialReturn = true,       -- special highlight for the return keyword
+    specialException = true,    -- special highlight for exception handling keywords
+    transparent = false,        -- do not set background color
+    colors = colors,
+})
+
+-- setup must be called before loading
+vim.cmd("colorscheme kanagawa") ]]
 
 return M

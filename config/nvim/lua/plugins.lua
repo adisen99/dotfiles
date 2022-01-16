@@ -63,7 +63,12 @@ packer.startup(function()
     disable = false
   }
   use {
-    'ishan9299/modus-theme-vim'
+    'ishan9299/modus-theme-vim',
+    disable = false
+  }
+  use {
+    'rebelot/kanagawa.nvim',
+    disable = true
   }
 
   -- file browsing
@@ -113,7 +118,8 @@ packer.startup(function()
     'neovim/nvim-lspconfig',
     config = function()
       require('nv_lsp')
-    end
+    end,
+    event='VimEnter'
   }
   use {
     'nvim-lua/lsp_extensions.nvim'
@@ -124,7 +130,7 @@ packer.startup(function()
   -- autocompletion
   use {
     'hrsh7th/nvim-cmp',
-    event = "InsertEnter",
+    event = "VimEnter",
     config = function()
       require('nv_cmp')
     end,
@@ -134,7 +140,9 @@ packer.startup(function()
       -- {"saadparwaiz1/cmp_luasnip", after = "nvim-cmp"},
       {"hrsh7th/cmp-buffer", after = "nvim-cmp"},
       {"hrsh7th/cmp-vsnip", after = "nvim-cmp"},
-      {"hrsh7th/cmp-nvim-lsp", after = "nvim-cmp"},
+      {
+        "hrsh7th/cmp-nvim-lsp", -- after = "nvim-cmp"
+      },
       {"hrsh7th/cmp-path", after = "nvim-cmp"},
       {"hrsh7th/cmp-nvim-lua", after = "nvim-cmp"},
       {"hrsh7th/cmp-calc", after = "nvim-cmp"},
@@ -239,7 +247,8 @@ packer.startup(function()
   -- autopairing bracket
   use {
     'windwp/nvim-autopairs',
-    after = 'nvim-cmp',
+    -- after = 'nvim-cmp',
+    event = 'InsertEnter',
     config = function()
       require('nv_autopairs')
     end,
@@ -343,5 +352,19 @@ packer.startup(function()
       "Copilot"
     },
     disable = true
+  }
+  -- stabilise
+
+  use {
+    "luukvbaal/stabilize.nvim",
+    config = function() require("stabilize").setup() end
+  }
+  -- BuildMe
+  use {
+    'ojroques/nvim-buildme',
+    cmd = {"BuildMe", "BuildMeStop", "BuildMeEdit", "BuildMeJump"},
+    config = function()
+      require('nv_buildme')
+    end,
   }
 end)

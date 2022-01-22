@@ -122,7 +122,9 @@ packer.startup(function()
     event='VimEnter'
   }
   use {
-    'nvim-lua/lsp_extensions.nvim'
+    'nvim-lua/lsp_extensions.nvim',
+    -- branch = 'fix_diag',
+    disable = false
   }
   use {
     'nvim-lua/lsp-status.nvim'
@@ -136,10 +138,14 @@ packer.startup(function()
     end,
     requires = {
       {"onsails/lspkind-nvim"},
-      -- {"L3MON4D3/LuaSnip", after = "nvim-cmp"},
-      -- {"saadparwaiz1/cmp_luasnip", after = "nvim-cmp"},
+      {
+        "L3MON4D3/LuaSnip", config = function()
+          require("nv_snippets")
+        end
+      },
+      {"saadparwaiz1/cmp_luasnip", after = "nvim-cmp"},
       {"hrsh7th/cmp-buffer", after = "nvim-cmp"},
-      {"hrsh7th/cmp-vsnip", after = "nvim-cmp"},
+      -- {"hrsh7th/cmp-vsnip", after = "nvim-cmp"},
       {
         "hrsh7th/cmp-nvim-lsp", -- after = "nvim-cmp"
       },
@@ -177,7 +183,7 @@ packer.startup(function()
     config = function()
       require('nv_snippets')
     end,
-    disable = false
+    disable = true
   }
 
   -- (statusline)

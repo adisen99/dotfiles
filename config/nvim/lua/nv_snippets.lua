@@ -2,19 +2,32 @@
 
 local M = {}
 
-local cmd = vim.cmd
-local g = vim.g
+local ls = require("luasnip")
+local types = require("luasnip.util.types")
 
-g.vsnip_snippet_dir = '/home/aditya/.config/nvim/snippets'
+-- If you're reading this file for the first time, best skip to around line 190
+-- where the actual snippet-definitions start.
 
-cmd([[
-" Expand
-imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+-- Every unspecified option will be set to the default.
+ls.config.set_config({
+	history = true,
+	-- Update more often, :h events for more info.
+	updateevents = "TextChanged,TextChangedI",
+	ext_opts = {
+		[types.choiceNode] = {
+			active = {
+				virt_text = { { "choiceNode", "Comment" } },
+			},
+		},
+	},
+	-- treesitter-hl has 100, use something higher (default is 200).
+	ext_base_prio = 300,
+	-- minimal increase in priority.
+	ext_prio_increase = 1,
+	enable_autosnippets = true,
+})
 
-" Expand or jump
-imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-]])
+-- require("luasnip.loaders.from_vscode").lazy_load() -- Lazy loading
+require("luasnip.loaders.from_snipmate").lazy_load({path = '../snippets'}) -- Lazy loading
 
 return M

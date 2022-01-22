@@ -45,7 +45,7 @@ local ws_diagnostic_counts = function(_, buffer)
 
   local messages = {}
 
-  local error_count = ws_diagnostics.get_count(buffer.bufnr, "Error")
+  local error_count = ws_diagnostics.get(buffer.bufnr, "Error")
 
   local x = "⬤"
   if error_count == 0 then

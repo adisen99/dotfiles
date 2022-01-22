@@ -82,6 +82,6 @@ map('n', '<A-p>', ':lua require("telescope.builtin").find_files()<cr>', N)
 map('n', '<A-g>', ':lua require("telescope.builtin").git_files()<cr>', N)
 map('n', '<A-b>', ':lua require("telescope.builtin").buffers()<cr>', N)
 map('n', '<A-f>', ':lua require("telescope.builtin").grep_string()<cr>', N)
--- map('n', '<A-h>', ':lua require("telescope.builtin").help_tags()<cr>', N)
+map('n', '<A-h>', ':lua require("telescope.builtin").help_tags()<cr>', N)
 
 return M

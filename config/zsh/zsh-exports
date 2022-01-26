@@ -3,7 +3,7 @@ HISTFILE="$ZDOTDIR"/.history
 HISTSIZE=1000
 SAVEHIST=1000
 # eval "$(fnm env)"
-export PATH=$HOME/.local/bin:/usr/local/bin:/opt/opengrads:/opt/nvim/usr/bin:/opt/cdo/bin:/opt/Museeks/:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:/opt/opengrads:/opt/nvim/usr/bin:/opt/cdo/bin:/opt/Museeks/:/opt/love2d/bin:$PATH
 
 # nvm sourcing
 export NVM_DIR="$HOME/.nvm"

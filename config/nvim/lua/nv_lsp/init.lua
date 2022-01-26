@@ -22,7 +22,10 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities;
     settings = {
       ["fortls"] = {
-        nthreads = 4 -- setting nthreads manually to 4
+        nthreads = 4, -- setting nthreads manually to 4
+        disableDiagnostics = false,
+        enableCodeActions = true,
+        variableHover = true,
       },
       ["rust-analyzer"] = {
           cargo = {

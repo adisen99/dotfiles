@@ -133,6 +133,7 @@ packer.startup(function()
   use {
     'hrsh7th/nvim-cmp',
     event = "VimEnter",
+    -- after = "nvim-lspconfig",
     config = function()
       require('nv_cmp')
     end,
@@ -147,7 +148,7 @@ packer.startup(function()
       {"hrsh7th/cmp-buffer", after = "nvim-cmp"},
       -- {"hrsh7th/cmp-vsnip", after = "nvim-cmp"},
       {
-        "hrsh7th/cmp-nvim-lsp", -- after = "nvim-cmp"
+        "hrsh7th/cmp-nvim-lsp", -- after = "nvim-lspconfig"
       },
       {"hrsh7th/cmp-path", after = "nvim-cmp"},
       {"hrsh7th/cmp-nvim-lua", after = "nvim-cmp"},

@@ -358,7 +358,7 @@ packer.startup(function()
     cmd = {
       "Copilot"
     },
-    disable = true
+    disable = false
   }
   -- stabilise
 

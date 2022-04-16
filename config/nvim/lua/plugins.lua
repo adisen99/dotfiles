@@ -60,15 +60,19 @@ packer.startup(function()
     'adisen99/gruvy',
     branch = 'personal',
     requires = {'rktjmp/lush.nvim'},
-    disable = false
+    disable = true
   }
   use {
     'ishan9299/modus-theme-vim',
-    disable = false
+    disable = true
   }
   use {
     'rebelot/kanagawa.nvim',
     disable = true
+  }
+  use {
+    'kvrohit/rasmus.nvim',
+    disable = false
   }
 
   -- file browsing
@@ -373,5 +377,6 @@ packer.startup(function()
     config = function()
       require('nv_buildme')
     end,
+    disable = true,
   }
 end)

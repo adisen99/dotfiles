@@ -21,6 +21,7 @@ opt.wildmode = { "longest", "list", "full" }
 opt.wildmode = opt.wildmode - "list"
 opt.wildmode = opt.wildmode + { "longest", "full" }
 opt.wildoptions = "pum"
+opt.laststatus=3
 o.showmode = false
 o.showcmd = true
 o.relativenumber = true

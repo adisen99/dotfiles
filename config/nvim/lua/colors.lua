@@ -23,12 +23,12 @@ vim.cmd('colorscheme jellybeans-nvim') ]]
 -- g.codeschool_invert_selection = 1
 -- g.codeschool_invert_tabline = 1
 -- g.codeschool_transparent_bg = false
-g.codeschool_contrast_dark = "hard"
+--[[ g.codeschool_contrast_dark = "hard"
 g.codeschool_tabline_sel = "fg0"
 require('lush')(require('codeschool').setup({
   plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer"},
   langs = {"lua", "python", "rust", "markdown", "viml", "golang"},
-}))
+})) ]]
 
 -- Appretice
 --[[ g.apprentice_contrast_dark = "hard"
@@ -73,5 +73,8 @@ require('kanagawa').setup({
 
 -- setup must be called before loading
 vim.cmd("colorscheme kanagawa") ]]
+
+-- Rasmus theme
+vim.cmd[[colorscheme rasmus]]
 
 return M

@@ -56,7 +56,11 @@ cmp.setup {
       require'luasnip'.lsp_expand(args.body)
     end,
   },
-  mapping = {
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    -- documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
@@ -88,8 +92,8 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-  },
-  sources = {
+  }),
+  sources = cmp.config.sources({
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     { name = 'path' },
@@ -102,11 +106,10 @@ cmp.setup {
     -- { name = 'cmp_tabnine' },
     -- { name = "crates" },
     -- { name = "emoji" },
-  },
-  experimental = {
-    native_menu = false,
-    ghost_text = false
-  }
+  }),
+  --[[ view = {
+    entries = 'native'
+  }, ]]
 }
 
 return M

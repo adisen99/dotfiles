@@ -44,7 +44,21 @@ local M = {}
   cool = "#92baff"
 } ]]
 
-local sections = {         -- define sections
+local rasmus = {
+  white = "#d1d1d1",
+  light_gray = "#6a6a69",
+  grey = "#3a3a39",
+  black = "#222221",
+  blue = "#8db4d4",
+  red = "#ff968c",
+  aqua = "#7bb099",
+  green = "#61957f",
+  yellow = "#ffc591",
+  purple = "#d39bc8",
+  cool = "#8db4d4"
+}
+
+--[[ local sections_cool = {         -- define sections
     {class = 'mode_cool', item = require('hardline.parts.mode').get_item},
     {class = 'cool', item = require('hardline.parts.git').get_item, hide = 100},
     {class = 'cool', item = '%='},
@@ -60,11 +74,29 @@ local sections = {         -- define sections
     {class = 'cool', item = require('hardline.parts.lsp').get_warning},
     {class = 'cool', item = require('hardline.parts.whitespace').get_item},
     {class = 'cool', item = require('hardline.parts.line').get_item},
+} ]]
+
+local sections_normal = {         -- define sections
+    {class = 'mode', item = require('hardline.parts.mode').get_item},
+    {class = 'high', item = require('hardline.parts.git').get_item, hide = 100},
+    {class = 'med', item = '%='},
+    -- {class = 'cool', item = require('hardline.parts.filetype').get_item, hide = 80},
+    {class = 'med', item = require('hardline.parts.fileicon').get_item, hide = 50},
+    -- {class = 'cool', item = '~'},
+    {class = 'med', item = require('hardline.parts.filename').get_item},
+    '%<',
+    {class = 'med', item = '%='},
+    {class = 'low', item = require('hardline.parts.wordcount').get_item, hide = 100},
+    {class = 'low', item = require('hardline.parts.server_progress').get_item, hide=80},
+    {class = 'error', item = require('hardline.parts.lsp').get_error},
+    {class = 'warning', item = require('hardline.parts.lsp').get_warning},
+    {class = 'warning', item = require('hardline.parts.whitespace').get_item},
+    {class = 'high', item = require('hardline.parts.line').get_item},
 }
 
 require('hardline').setup {
-  -- theme = codeshcool,
-  sections = sections
+  theme = rasmus,
+  sections = sections_normal
 }
 
 return M

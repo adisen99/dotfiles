@@ -23,7 +23,12 @@ vim.cmd('colorscheme jellybeans-nvim') ]]
 -- g.codeschool_invert_selection = 1
 -- g.codeschool_invert_tabline = 1
 -- g.codeschool_transparent_bg = false
---[[ g.codeschool_contrast_dark = "hard"
+--[[ g.codeschool_hls_lspreference = "bright_orange"
+g.codeschool_hls_cursor = "bright_orange"
+g.codeschool_hls_highlight = "bright_orange"
+g.codeschool_contrast_dark = "hard"
+g.codeschool_italicize_booleans = true
+g.codeschool_sign_column = 'dark0_hard'
 g.codeschool_tabline_sel = "fg0"
 require('lush')(require('codeschool').setup({
   plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer"},
@@ -31,8 +36,13 @@ require('lush')(require('codeschool').setup({
 })) ]]
 
 -- Appretice
---[[ g.apprentice_contrast_dark = "hard"
+--[[ g.apprentice_hls_lspreference = "bright_yellow"
+g.apprentice_hls_cursor = "bright_yellow"
+g.apprentice_hls_highlight = "bright_yellow"
+g.apprentice_contrast_dark = "hard"
+g.apprentice_italicize_booleans = true
 g.apprentice_tabline_sel = "fg0"
+g.apprentice_sign_column = 'dark0_hard'
 require('lush')(require('apprentice').setup({
   plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer"},
   langs = {"lua", "python", "rust", "markdown", "viml", "golang"},
@@ -75,6 +85,11 @@ require('kanagawa').setup({
 vim.cmd("colorscheme kanagawa") ]]
 
 -- Rasmus theme
-vim.cmd[[colorscheme rasmus]]
+g.rasmus_italic_booleans = true
+g.rasmus_variant = "dark"
+vim.cmd('colorscheme rasmus')
+
+-- Arctiv colorscheme
+-- vim.cmd("colorscheme arctic")
 
 return M

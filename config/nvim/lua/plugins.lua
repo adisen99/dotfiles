@@ -74,6 +74,11 @@ packer.startup(function()
     'kvrohit/rasmus.nvim',
     disable = false
   }
+  use {
+    "rockyzhang24/arctic.nvim",
+    requires = {"rktjmp/lush.nvim"},
+    disable = false
+  }
 
   -- file browsing
 

@@ -2,7 +2,7 @@
 
 local M = {}
 
---[[ local codeshcool = {
+local codeshcool = {
   white = "#fbfbfb",
   light_gray = '#555e61',
   gray = "#2e373b",
@@ -14,7 +14,7 @@ local M = {}
   yellow = "#e9c062",
   purple = "#bfabcb",
   cool = '#87afd7'
-} ]]
+}
 
 --[[ local apprentice = {
   white = "#fbfbfb",
@@ -44,7 +44,7 @@ local M = {}
   cool = "#92baff"
 } ]]
 
-local rasmus = {
+--[[ local rasmus = {
   white = "#d1d1d1",
   light_gray = "#6a6a69",
   grey = "#3a3a39",
@@ -56,9 +56,9 @@ local rasmus = {
   yellow = "#ffc591",
   purple = "#d39bc8",
   cool = "#8db4d4"
-}
+} ]]
 
---[[ local sections_cool = {         -- define sections
+local sections_cool = {         -- define sections
     {class = 'mode_cool', item = require('hardline.parts.mode').get_item},
     {class = 'cool', item = require('hardline.parts.git').get_item, hide = 100},
     {class = 'cool', item = '%='},
@@ -74,9 +74,9 @@ local rasmus = {
     {class = 'cool', item = require('hardline.parts.lsp').get_warning},
     {class = 'cool', item = require('hardline.parts.whitespace').get_item},
     {class = 'cool', item = require('hardline.parts.line').get_item},
-} ]]
+}
 
-local sections_normal = {         -- define sections
+--[[ local sections_normal = {         -- define sections
     {class = 'mode', item = require('hardline.parts.mode').get_item},
     {class = 'high', item = require('hardline.parts.git').get_item, hide = 100},
     {class = 'med', item = '%='},
@@ -92,11 +92,11 @@ local sections_normal = {         -- define sections
     {class = 'warning', item = require('hardline.parts.lsp').get_warning},
     {class = 'warning', item = require('hardline.parts.whitespace').get_item},
     {class = 'high', item = require('hardline.parts.line').get_item},
-}
+} ]]
 
 require('hardline').setup {
-  theme = rasmus,
-  sections = sections_normal
+  theme = codeshcool,
+  sections = sections_cool,
 }
 
 return M

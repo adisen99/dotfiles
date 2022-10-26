@@ -23,9 +23,9 @@ vim.cmd('colorscheme jellybeans-nvim') ]]
 -- g.codeschool_invert_selection = 1
 -- g.codeschool_invert_tabline = 1
 -- g.codeschool_transparent_bg = false
-g.codeschool_hls_lspreference = "faded_yellow"
-g.codeschool_hls_cursor = "faded_yellow"
-g.codeschool_hls_highlight = "faded_yellow"
+g.codeschool_hls_lspreference = "light4"
+g.codeschool_hls_cursor = "light4"
+g.codeschool_hls_highlight = "light4"
 g.codeschool_contrast_dark = "hard"
 g.codeschool_italicize_booleans = true
 g.codeschool_sign_column = 'dark0_hard'
@@ -36,9 +36,9 @@ require('lush')(require('codeschool').setup({
 }))
 
 -- Appretice
---[[ g.apprentice_hls_lspreference = "bright_purple"
-g.apprentice_hls_cursor = "bright_purple"
-g.apprentice_hls_highlight = "bright_purple"
+--[[ g.apprentice_hls_lspreference = "light4"
+g.apprentice_hls_cursor = "light4"
+g.apprentice_hls_highlight = "light4"
 g.apprentice_contrast_dark = "hard"
 g.apprentice_italicize_booleans = true
 g.apprentice_tabline_sel = "fg0"
@@ -89,7 +89,7 @@ vim.cmd("colorscheme kanagawa") ]]
 g.rasmus_variant = "dark"
 vim.cmd('colorscheme rasmus') ]]
 
--- Arctiv colorscheme
+-- Arctic colorscheme
 -- vim.cmd("colorscheme arctic")
 
 return M

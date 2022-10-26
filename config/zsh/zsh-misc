@@ -5,7 +5,8 @@ echo " "
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
 
 ## Conda setup
-# >>> conda initialize >>>
+# 
+# >>> conda and mamba initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/aditya/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -18,4 +19,10 @@ else
     fi
 fi
 unset __conda_setup
+
+if [ -f "/home/aditya/.miniconda/etc/profile.d/mamba.sh" ]; then
+    . "/home/aditya/.miniconda/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
+
+

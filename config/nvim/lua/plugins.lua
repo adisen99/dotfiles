@@ -133,7 +133,7 @@ packer.startup(function()
   use {
     'nvim-lua/lsp_extensions.nvim',
     -- branch = 'fix_diag',
-    disable = false
+    disable = true
   }
   use {
     'nvim-lua/lsp-status.nvim'

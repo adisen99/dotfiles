@@ -1,39 +1,19 @@
-vim.lsp.handlers["textDocument/definition"] = function(_, _, result)
+-- Jump directly to the first available definition every time.
+vim.lsp.handlers["textDocument/definition"] = function(_, result)
   if not result or vim.tbl_isempty(result) then
     print "[LSP] Could not find definition"
     return
   end
 
   if vim.tbl_islist(result) then
-    vim.lsp.util.jump_to_location(result[1])
+    vim.lsp.util.jump_to_location(result[1], "utf-8")
   else
-    vim.lsp.util.jump_to_location(result)
+    vim.lsp.util.jump_to_location(result, "utf-8")
   end
 end
 
--- vim.lsp.handlers["textDocument/definition"] = vim.lsp.with(
---   vim.lsp.handlers.location, {
---     location_callback = function(location)
---       vim.cmd [[vsplit]]
---       vim.lsp.util.jump_to_location(location)
---     end
---   }
--- )
-
--- Normal configuration, but for now testing out workspace configuration.
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---   vim.lsp.diagnostic.on_publish_diagnostics, {
---     signs = {
---       severity_limit = "Error",
---     },
---     -- virtual_text = {
---     --   severity_limit = "Warning",
---     -- },
---   }
--- )
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  require("lsp_extensions.workspace.diagnostic").handler,
-  {
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  vim.lsp.with(vim.lsp.handlers["textDocument/publishDiagnostics"], {
     signs = {
       severity_limit = "Error",
     },
@@ -41,44 +21,61 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       severity_limit = "Warning",
     },
     virtual_text = true,
-  }
-)
-
-
-function DoSomeLens()
-  print "Lens Requesting..."
-
-  vim.lsp.buf_request(0, "textDocument/codeLens", {
-    textDocument = vim.lsp.util.make_text_document_params(),
   })
 
-  print "... Done"
-end
+vim.lsp.handlers["window/showMessage"] = require "nv_lsp.show_message"
 
-vim.lsp.handlers["textDocument/codeLens"] = function(err, _, result)
-  print "Code Lens..."
-  print(result)
-  print "...Code Lens"
-end
+local M = {}
 
--- TODO: Move to colorbuddy
-vim.cmd [[highlight LspLinesDiagBorder guifg=white]]
-vim.cmd [[highlight LineDiagTuncateLine guifg=white]]
+M.implementation = function()
+  local params = vim.lsp.util.make_position_params()
 
+  vim.lsp.buf_request(0, "textDocument/implementation", params, function(err, result, ctx, config)
+    local bufnr = ctx.bufnr
+    local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")
 
-GoImports = function(timeoutms)
-  local context = { source = { organizeImports = true } }
-  vim.validate { context = { context, "t", true } }
-  local params = vim.lsp.util.make_range_params()
-  params.context = context
-  local method = "textDocument/codeAction"
-  local resp = vim.lsp.buf_request_sync(0, method, params, timeoutms)
-  if resp and resp[1] then
-    local result = resp[1].result
-    if result and result[1] then
-      local edit = result[1].edit
-      vim.lsp.util.apply_workspace_edit(edit)
+    -- In go code, I do not like to see any mocks for impls
+    if ft == "go" then
+      local new_result = vim.tbl_filter(function(v)
+        return not string.find(v.uri, "mock_")
+      end, result)
+
+      if #new_result > 0 then
+        result = new_result
+      end
     end
-  end
-  vim.lsp.buf.formatting()
+
+    vim.lsp.handlers["textDocument/implementation"](err, result, ctx, config)
+    vim.cmd [[normal! zz]]
+  end)
 end
+
+-- vim.lsp.codelens.display = require("gl.codelens").display
+
+--[[
+|| brrr brrr brrr.... running test...
+|| {
+||   arguments = { "file:///home/tjdevries/plugins/green_light.nvim/test/green_light/example_test.go", { "TestExample" }, vim.NIL },
+||   command = "gopls.test",
+||   title = "run test"
+|| }
+|| {
+||   bufnr = 1,
+||   client_id = 1
+|| }
+--]]
+-- vim.lsp.commands["gopls.test"] = function(command, context)
+--   local TestRun = require("gl.test").TestRun
+--
+--   local test_pattern = command.arguments[2][1]
+--   print("test pattern:", test_pattern)
+--
+--   TestRun
+--     :new({
+--       file_pattern = "/home/tjdevries/plugins/green_light.nvim/test/green_light/...",
+--       test_pattern = "^" .. test_pattern .. "$",
+--     })
+--     :run()
+-- end
+
+return M

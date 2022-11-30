@@ -58,22 +58,22 @@ local codeshcool = {
   cool = "#8db4d4"
 } ]]
 
-local sections_cool = {         -- define sections
-    {class = 'mode_cool', item = require('hardline.parts.mode').get_item},
-    {class = 'cool', item = require('hardline.parts.git').get_item, hide = 100},
-    {class = 'cool', item = '%='},
-    -- {class = 'cool', item = require('hardline.parts.filetype').get_item, hide = 80},
-    {class = 'cool', item = require('hardline.parts.fileicon').get_item, hide = 50},
-    -- {class = 'cool', item = '~'},
-    {class = 'cool', item = require('hardline.parts.filename').get_item},
-    '%<',
-    {class = 'cool', item = '%='},
-    {class = 'cool', item = require('hardline.parts.wordcount').get_item, hide = 100},
-    {class = 'cool', item = require('hardline.parts.server_progress').get_item, hide=80},
-    {class = 'cool', item = require('hardline.parts.lsp').get_error},
-    {class = 'cool', item = require('hardline.parts.lsp').get_warning},
-    {class = 'cool', item = require('hardline.parts.whitespace').get_item},
-    {class = 'cool', item = require('hardline.parts.line').get_item},
+local sections_cool = { -- define sections
+  { class = 'mode_cool', item = require('hardline.parts.mode').get_item },
+  { class = 'cool', item = require('hardline.parts.git').get_item, hide = 100 },
+  { class = 'cool', item = '%=' },
+  -- {class = 'cool', item = require('hardline.parts.filetype').get_item, hide = 80},
+  { class = 'cool', item = require('hardline.parts.fileicon').get_item, hide = 50 },
+  -- {class = 'cool', item = '~'},
+  { class = 'cool', item = require('hardline.parts.filename').get_item },
+  '%<',
+  { class = 'cool', item = '%=' },
+  { class = 'cool', item = require('hardline.parts.wordcount').get_item, hide = 100 },
+  { class = 'cool', item = require('hardline.parts.server_progress').get_item, hide = 80 },
+  { class = 'cool', item = require('hardline.parts.lsp').get_error },
+  { class = 'cool', item = require('hardline.parts.lsp').get_warning },
+  { class = 'cool', item = require('hardline.parts.whitespace').get_item },
+  { class = 'cool', item = require('hardline.parts.line').get_item },
 }
 
 --[[ local sections_normal = {         -- define sections

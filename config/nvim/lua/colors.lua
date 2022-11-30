@@ -31,8 +31,8 @@ g.codeschool_italicize_booleans = true
 g.codeschool_sign_column = 'dark0_hard'
 g.codeschool_tabline_sel = "fg0"
 require('lush')(require('codeschool').setup({
-  plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer"},
-  langs = {"lua", "python", "rust", "markdown", "viml", "golang"},
+  plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer" },
+  langs = { "lua", "python", "rust", "markdown", "viml", "golang" },
 }))
 
 -- Appretice

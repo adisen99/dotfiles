@@ -41,22 +41,8 @@ local M = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
-  -- formatting
-  if filetype == "rust" then
-    vim.cmd [[
-      augroup lsp_buf_format
-        au! BufWritePre <buffer>
-        autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting(nil, 5000)
-      augroup END
-    ]]
-  elseif filetype == "go" then
-    vim.cmd [[
-      augroup lsp_buf_format
-        au! BufWritePre <buffer>
-        autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting()
-      augroup END
-    ]]
-  end
+  -- lsp-formatting
+  require("lsp-format").on_attach(client)
 
   -- Set autocommands conditional on server_capabilities
   if client.server_capabilities.document_highlight then

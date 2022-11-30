@@ -14,7 +14,8 @@ local capabilities = require('nv_lsp.capabilities')
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 
-local servers = { "pyright", "bashls", "texlab", "vimls", "html", "cssls", "fortls", "rust_analyzer", "gopls", "intelephense" }
+local servers = { "pyright", "bashls", "texlab", "vimls", "html", "cssls", "fortls", "rust_analyzer", "gopls",
+  "intelephense" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_init = on_init,
@@ -28,34 +29,34 @@ for _, lsp in ipairs(servers) do
         variableHover = true,
       },
       ["rust-analyzer"] = {
-          cargo = {
-            allFeatures = true,
-            loadOutDirsFromCheck = true
-          },
-          checkOnSave = {
-            allFeatures = true,
-            command = 'clippy'
-          },
-          diagnostics = {
-            disabled = { 'macro-error' },
-            enableExperimental = false
-          },
-          inlayHints = {
-            chainingHints = false,
-            enable = false,
-            typeHints = false,
-          },
-          hover = {
-            debug = false,
-            implementations = false
-          },
-          lens = {
-            debug = false,
-            implementations = false
-          },
-          procMacro = {
-            enable = true
-          }
+        cargo = {
+          allFeatures = true,
+          loadOutDirsFromCheck = true
+        },
+        checkOnSave = {
+          allFeatures = true,
+          command = 'clippy'
+        },
+        diagnostics = {
+          disabled = { 'macro-error' },
+          enableExperimental = false
+        },
+        inlayHints = {
+          chainingHints = false,
+          enable = false,
+          typeHints = false,
+        },
+        hover = {
+          debug = false,
+          implementations = false
+        },
+        lens = {
+          debug = false,
+          implementations = false
+        },
+        procMacro = {
+          enable = true
+        }
       },
       ["gopls"] = {
         codelenses = { test = true },

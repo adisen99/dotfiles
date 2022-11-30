@@ -86,9 +86,6 @@ packer.startup(function()
   use {
     'kyazdani42/nvim-web-devicons',
     module = 'nvim-web-devicons',
-    setup = function()
-      require('nvim-web-devicons.override')
-    end,
   }
 
   use {
@@ -96,6 +93,11 @@ packer.startup(function()
     requires = {
       { 'nvim-web-devicons' },
     },
+    config = function()
+      require("nvim-nonicons").setup({
+        devicons = { override = true }
+      })
+    end,
   }
 
   -- nvim-tree
@@ -141,7 +143,16 @@ packer.startup(function()
     disable = true
   }
   use {
-    'nvim-lua/lsp-status.nvim'
+    'nvim-lua/lsp-status.nvim',
+    disable = true
+  }
+
+  use {
+    'j-hui/fidget.nvim',
+    config = function()
+      require("fidget").setup()
+    end,
+    bufread = true
   }
   -- autocompletion
   use {

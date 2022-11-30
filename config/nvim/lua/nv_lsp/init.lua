@@ -2,8 +2,8 @@
 
 local M = {}
 
-require('nv_lsp.handlers')
-require('nv_lsp.status').activate()
+-- require('nv_lsp.handlers')
+-- require('nv_lsp.status').activate()
 
 vim.cmd [[packadd nvim-lspconfig]]
 local nvim_lsp = require('lspconfig')

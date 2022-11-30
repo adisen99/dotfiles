@@ -1,7 +1,7 @@
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 
-local lspstatus = require('lsp-status')
+-- local lspstatus = require('lsp-status')
 
 local M = function(client, bufnr)
 
@@ -11,7 +11,7 @@ local M = function(client, bufnr)
 
   local filetype = vim.api.nvim_buf_get_option(0, "filetype")
 
-  lspstatus.on_attach(client)
+  -- lspstatus.on_attach(client)
 
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end

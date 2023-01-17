@@ -79,6 +79,11 @@ packer.startup(function()
     requires = { "rktjmp/lush.nvim" },
     disable = true
   }
+  use {
+    'ramojus/mellifluous.nvim',
+    requires = { 'rktjmp/lush.nvim' },
+    disable = false
+  }
 
   -- file browsing
 

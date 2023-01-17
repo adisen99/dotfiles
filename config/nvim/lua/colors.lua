@@ -13,8 +13,8 @@ g.indent_blankline_show_trailing_blankline_indent = false ]]
 -- g.indent_blankline_char = '|'
 
 -- jellybeans
---[[ g.jellybeans_italic_comments = true
-vim.cmd('colorscheme jellybeans-nvim') ]]
+g.jellybeans_italic_comments = true
+vim.cmd('colorscheme jellybeans-nvim')
 
 -- Codeschool
 -- g.codeschool_number_column = "bg0"
@@ -23,7 +23,7 @@ vim.cmd('colorscheme jellybeans-nvim') ]]
 -- g.codeschool_invert_selection = 1
 -- g.codeschool_invert_tabline = 1
 -- g.codeschool_transparent_bg = false
-g.codeschool_hls_lspreference = "light4"
+--[[ g.codeschool_hls_lspreference = "light4"
 g.codeschool_hls_cursor = "light4"
 g.codeschool_hls_highlight = "light4"
 g.codeschool_contrast_dark = "hard"
@@ -33,7 +33,7 @@ g.codeschool_tabline_sel = "fg0"
 require('lush')(require('codeschool').setup({
   plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer" },
   langs = { "lua", "python", "rust", "markdown", "viml", "golang" },
-}))
+})) ]]
 
 -- Appretice
 --[[ g.apprentice_hls_lspreference = "light4"
@@ -44,8 +44,8 @@ g.apprentice_italicize_booleans = true
 g.apprentice_tabline_sel = "fg0"
 g.apprentice_sign_column = 'dark0_hard'
 require('lush')(require('apprentice').setup({
-  plugins = {"netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer"},
-  langs = {"lua", "python", "rust", "markdown", "viml", "golang"},
+  plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer" },
+  langs = { "lua", "python", "rust", "markdown", "viml", "golang" },
 })) ]]
 
 -- Gruvy
@@ -91,5 +91,30 @@ vim.cmd('colorscheme rasmus') ]]
 
 -- Arctic colorscheme
 -- vim.cmd("colorscheme arctic")
+
+-- Mellifluous colorscheme
+--[[ require 'mellifluous'.setup({
+  color_set = 'mellifluous',
+  neutral = true,
+  bg_contrast = 'hard',
+  styles = {
+    comments = 'italic',
+    booleans = 'italic',
+  },
+  plugins = {
+    cmp = true,
+    gitsigns = true,
+    indent_blankline = false,
+    nvim_tree = {
+      enabled = false,
+      show_root = false,
+    },
+    telescope = {
+      enabled = true,
+      nvchad_like = true,
+    },
+  },
+})
+vim.cmd('colorscheme mellifluous') ]]
 
 return M

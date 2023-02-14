@@ -12,14 +12,14 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local sumneko_root_path = '/home/aditya/.config/nvim/lua-ls/lua-language-server'
-local sumneko_binary = sumneko_root_path.."/bin/lua-language-server"
+local luals_root_path = '/home/aditya/.config/nvim/lua-ls/lua-language-server'
+local luals_binary = luals_root_path .. "/bin/lua-language-server"
 
-nvim_lsp.sumneko_lua.setup {
-  on_init=  on_init,
+nvim_lsp.lua_ls.setup {
+  on_init = on_init,
   on_attach = on_attach,
-  capabilities = capabilities;
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+  capabilities = capabilities,
+  cmd = { luals_binary },
   settings = {
     Lua = {
       runtime = {
@@ -30,7 +30,7 @@ nvim_lsp.sumneko_lua.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files

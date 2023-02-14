@@ -13,8 +13,8 @@ g.indent_blankline_show_trailing_blankline_indent = false ]]
 -- g.indent_blankline_char = '|'
 
 -- jellybeans
-g.jellybeans_italic_comments = true
-vim.cmd('colorscheme jellybeans-nvim')
+--[[ g.jellybeans_italic_comments = true
+vim.cmd('colorscheme jellybeans-nvim') ]]
 
 -- Codeschool
 -- g.codeschool_number_column = "bg0"
@@ -23,7 +23,7 @@ vim.cmd('colorscheme jellybeans-nvim')
 -- g.codeschool_invert_selection = 1
 -- g.codeschool_invert_tabline = 1
 -- g.codeschool_transparent_bg = false
---[[ g.codeschool_hls_lspreference = "light4"
+g.codeschool_hls_lspreference = "light4"
 g.codeschool_hls_cursor = "light4"
 g.codeschool_hls_highlight = "light4"
 g.codeschool_contrast_dark = "hard"
@@ -33,7 +33,7 @@ g.codeschool_tabline_sel = "fg0"
 require('lush')(require('codeschool').setup({
   plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer" },
   langs = { "lua", "python", "rust", "markdown", "viml", "golang" },
-})) ]]
+}))
 
 -- Appretice
 --[[ g.apprentice_hls_lspreference = "light4"

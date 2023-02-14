@@ -2,7 +2,7 @@
 
 local M = {}
 
---[[ local codeshcool = {
+local codeshcool = {
   white = "#fbfbfb",
   light_gray = '#555e61',
   gray = "#2e373b",
@@ -14,7 +14,7 @@ local M = {}
   yellow = "#e9c062",
   purple = "#bfabcb",
   cool = '#87afd7'
-} ]]
+}
 
 --[[ local apprentice = {
   white = "#fbfbfb",
@@ -95,7 +95,7 @@ local sections_cool = { -- define sections
 } ]]
 
 require('hardline').setup {
-  -- theme = rasmus,
+  theme = codeshcool,
   sections = sections_cool,
 }
 

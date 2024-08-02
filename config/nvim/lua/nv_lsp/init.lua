@@ -20,7 +20,7 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_init = on_init,
     on_attach = on_attach,
-    capabilities = capabilities;
+    capabilities = capabilities,
     settings = {
       ["fortls"] = {
         nthreads = 4, -- setting nthreads manually to 4
@@ -91,5 +91,4 @@ vim.fn.sign_define(
     "LspDiagnosticsSignInformation",
     {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
 ) ]]
-
 return M

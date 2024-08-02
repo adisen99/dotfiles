@@ -4,6 +4,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 # eval "$(fnm env)"
 export PATH=$HOME/.local/bin:/usr/local/bin:/opt/opengrads:/opt/nvim/usr/bin:/opt/cdo/bin:/opt/Museeks/:/opt/love2d/bin:$PATH
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/opt/local/lib
 
 # nvm sourcing
 export NVM_DIR="$HOME/.nvm"

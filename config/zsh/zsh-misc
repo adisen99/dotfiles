@@ -1,5 +1,5 @@
 ## Using fortune to echo quotes
-fortune ~/.config/quotes/quotes
+# fortune ~/.config/quotes/quotes
 echo " "
 
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
@@ -8,20 +8,20 @@ echo " "
 # 
 # >>> conda and mamba initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/aditya/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/assengu/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/aditya/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "/home/aditya/.miniconda/etc/profile.d/conda.sh"
+    if [ -f "/Users/assengu/.miniconda/etc/profile.d/conda.sh" ]; then
+        . "/Users/assengu/.miniconda/etc/profile.d/conda.sh"
     else
-        export PATH="/home/aditya/.miniconda/bin:$PATH"
+        export PATH="/Users/assengu/.miniconda/bin:$PATH"
     fi
 fi
 unset __conda_setup
 
-if [ -f "/home/aditya/.miniconda/etc/profile.d/mamba.sh" ]; then
-    . "/home/aditya/.miniconda/etc/profile.d/mamba.sh"
+if [ -f "/Users/assengu/.miniconda/etc/profile.d/mamba.sh" ]; then
+    . "/Users/assengu/.miniconda/etc/profile.d/mamba.sh"
 fi
 # <<< conda initialize <<<
 

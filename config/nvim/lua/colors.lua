@@ -14,8 +14,8 @@ g.indent_blankline_show_trailing_blankline_indent = false ]]
 
 -- jellybeans
 --[[ g.jellybeans_italic_comments = true
+g.jellybeans_italic_boolean = true
 vim.cmd('colorscheme jellybeans-nvim') ]]
-
 -- Codeschool
 -- g.codeschool_number_column = "bg0"
 -- g.codeschool_sign_column = "bg0"
@@ -23,7 +23,7 @@ vim.cmd('colorscheme jellybeans-nvim') ]]
 -- g.codeschool_invert_selection = 1
 -- g.codeschool_invert_tabline = 1
 -- g.codeschool_transparent_bg = false
-g.codeschool_hls_lspreference = "light4"
+--[[ g.codeschool_hls_lspreference = "light4"
 g.codeschool_hls_cursor = "light4"
 g.codeschool_hls_highlight = "light4"
 g.codeschool_contrast_dark = "hard"
@@ -31,10 +31,10 @@ g.codeschool_italicize_booleans = true
 g.codeschool_sign_column = 'dark0_hard'
 g.codeschool_tabline_sel = "fg0"
 require('lush')(require('codeschool').setup({
+  -- plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer", "treesitter" },
   plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer" },
   langs = { "lua", "python", "rust", "markdown", "viml", "golang" },
-}))
-
+})) ]]
 -- Appretice
 --[[ g.apprentice_hls_lspreference = "light4"
 g.apprentice_hls_cursor = "light4"
@@ -47,12 +47,8 @@ require('lush')(require('apprentice').setup({
   plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer" },
   langs = { "lua", "python", "rust", "markdown", "viml", "golang" },
 })) ]]
-
 -- Gruvy
 -- vim.cmd('colorscheme gruvy')
-
--- nvim-base16
--- vim.cmd('colorscheme base16-tomorrow-night')
 
 -- Modus theme
 -- g.modus_yellow_comments = 1
@@ -60,7 +56,6 @@ require('lush')(require('apprentice').setup({
 g.modus_faint_syntax = 1
 g.modus_cursorline_intense = 1
 vim.cmd('colorscheme modus-vivendi') ]]
-
 -- Kanagawa theme
 
 --[[ local colors = {
@@ -83,12 +78,10 @@ require('kanagawa').setup({
 
 -- setup must be called before loading
 vim.cmd("colorscheme kanagawa") ]]
-
 -- Rasmus theme
 --[[ g.rasmus_italic_booleans = true
 g.rasmus_variant = "dark"
 vim.cmd('colorscheme rasmus') ]]
-
 -- Arctic colorscheme
 -- vim.cmd("colorscheme arctic")
 
@@ -116,5 +109,23 @@ vim.cmd('colorscheme rasmus') ]]
   },
 })
 vim.cmd('colorscheme mellifluous') ]]
-
+-- minimal colorscheme
+--[[ g.minimal_italic_functions = true
+g.minimal_italic_comments = false
+vim.cmd('colorscheme minimal-base16') ]]
+-- no-clown-fiesta colorscheme
+require("no-clown-fiesta").setup({
+  transparent = false, -- Enable this to disable the bg color
+  styles = {
+    -- You can set any of the style values specified for `:h nvim_set_hl`
+    comments = { italic = true },
+    boolean = { italic = true },
+    keywords = {},
+    functions = {},
+    variables = {},
+    type = { bold = true },
+    lsp = { underline = true }
+  },
+})
+vim.cmd('colorscheme no-clown-fiesta')
 return M

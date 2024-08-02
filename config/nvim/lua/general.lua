@@ -21,7 +21,7 @@ opt.wildmode = { "longest", "list", "full" }
 opt.wildmode = opt.wildmode - "list"
 opt.wildmode = opt.wildmode + { "longest", "full" }
 opt.wildoptions = "pum"
-opt.laststatus=3
+opt.laststatus = 3
 o.showmode = false
 o.showcmd = true
 o.relativenumber = true
@@ -42,7 +42,7 @@ o.writebackup = false
 o.cmdheight = 2
 o.updatetime = 300
 o.timeoutlen = 500
-o.listchars='tab:→ ,eol:↲'
+-- o.listchars='tab:→ ,eol:↲'
 o.equalalways = false
 o.splitright = true
 o.splitbelow = true
@@ -51,15 +51,15 @@ o.joinspaces = false
 -- o.tabline = '%!v:lua.require\'luatab\'.tabline()'
 
 opt.formatoptions = opt.formatoptions
-  - "a" -- Auto formatting is BAD.
-  - "t" -- Don't auto format my code. I got linters for that.
-  + "c" -- In general, I like it when comments respect textwidth
-  + "q" -- Allow formatting comments w/ gq
-  - "o" -- O and o, don't continue comments
-  + "r" -- But do continue when pressing enter.
-  + "n" -- Indent past the formatlistpat, not underneath it.
-  + "j" -- Auto-remove comments if possible.
-  - "2" -- I'm not in gradeschool anymore
+    - "a" -- Auto formatting is BAD.
+    - "t" -- Don't auto format my code. I got linters for that.
+    + "c" -- In general, I like it when comments respect textwidth
+    + "q" -- Allow formatting comments w/ gq
+    - "o" -- O and o, don't continue comments
+    + "r" -- But do continue when pressing enter.
+    + "n" -- Indent past the formatlistpat, not underneath it.
+    + "j" -- Auto-remove comments if possible.
+    - "2" -- I'm not in gradeschool anymore
 
 -- buffer options
 bo.autoindent = true

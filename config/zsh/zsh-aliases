@@ -46,12 +46,12 @@ alias d="dirs -v"
 #alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' # bare git repository
 alias rfm='ranger'
 
-# Changing "ls" to "exa"
-alias ls='exa --group-directories-first' # my preferred listing
-alias la='exa -a --group-directories-first'  # all files and dirs
-alias ll='exa -l --group-directories-first'  # long format
-alias lal='exa -al --group-directories-first' # long format with all files and dirs
-alias lt='exa -lT --group-directories-first' # tree listing
+# Changing "ls" to "lsd"
+alias ls='lsd --group-directories-first' # my preferred listing
+alias la='lsd -a --group-directories-first'  # all files and dirs
+alias ll='lsd -l --group-directories-first'  # long format
+alias lal='lsd -al --group-directories-first' # long format with all files and dirs
+alias lt='lsd -lT --group-directories-first' # tree listing
 
 #ufetch
 #ufetch-linux

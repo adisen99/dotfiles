@@ -3,3 +3,6 @@ source $HOME/.config/zsh/zshrc
 
 alias luamake=/home/aditya/.config/nvim/lua-ls/lua-language-server/3rd/luamake/luamake
 
+# exporting homebrew path
+export PATH=/opt/homebrew/bin:$PATH
+

@@ -6,7 +6,7 @@ local M = {}
 
 local map = vim.api.nvim_set_keymap
 local g = vim.g
-local N = { noremap = true, silent= true }
+local N = { noremap = true, silent = true }
 local option = { noremap = true }
 
 -- set leader key and other keymaps
@@ -25,11 +25,12 @@ map('n', '<Up>', '<NOP>', N)
 map('n', '<Right>', '<NOP>', N)
 map('n', '<Left>', '<NOP>', N)
 
+
 -- resizing
-map('n', '<A-k>', ':resize -2<cr>', N)
-map('n', '<A-j>', ':resize +2<cr>', N)
-map('n', '<A-h>', ':vertical resize -2<cr>', N)
-map('n', '<A-l>', ':vertical resize +2<cr>', N)
+map('n', '˚', ':resize -2<cr>', N)
+map('n', '∆', ':resize +2<cr>', N)
+map('n', '˙', ':vertical resize -2<cr>', N)
+map('n', '¬', ':vertical resize +2<cr>', N)
 
 -- better indexing
 map('v', '<', '<gv', N)
@@ -51,10 +52,11 @@ map('n', '<C-s>', ':luafile %<cr>', N)
 -- Colorizer mapping
 map('n', '<leader>3', ':ColorizerToggle<cr>', N)
 
+
 -- Custom telescope mappings
-map('n', '<A-e>', ':lua require("nv_telescope").edit_neovim()<cr>', N)
-map('n', '<A-z>', ':lua require("nv_telescope").edit_zsh()<cr>', N)
-map('n', '<A-n>', ':lua require("nv_telescope").edit_neorg()<cr>', N)
+map('n', '˜', ':lua require("nv_telescope").edit_neovim()<cr>', N)
+map('n', 'Ω', ':lua require("nv_telescope").edit_zsh()<cr>', N)
+map('n', '˙', ':lua require("nv_telescope").edit_neorg()<cr>', N)
 
 -- Terminal mode remap
 map('t', '<Esc>', '<C-\\><C-n>', N)

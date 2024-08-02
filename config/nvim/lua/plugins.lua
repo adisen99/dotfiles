@@ -52,15 +52,10 @@ packer.startup(function()
     requires = { 'rktjmp/lush.nvim' },
   }
   use {
-    'adisen99/nvim-base16',
-    branch = 'personal',
-    disable = true
-  }
-  use {
     'adisen99/gruvy',
     branch = 'personal',
     requires = { 'rktjmp/lush.nvim' },
-    disable = false
+    disable = true
   }
   use {
     'ishan9299/modus-theme-vim',
@@ -72,7 +67,7 @@ packer.startup(function()
   }
   use {
     'kvrohit/rasmus.nvim',
-    disable = false
+    disable = true
   }
   use {
     "rockyzhang24/arctic.nvim",
@@ -82,7 +77,15 @@ packer.startup(function()
   use {
     'ramojus/mellifluous.nvim',
     requires = { 'rktjmp/lush.nvim' },
-    disable = false
+    disable = true
+  }
+  use {
+    'Yazeed1s/minimal.nvim',
+    disable = true,
+  }
+  use {
+    'aktersnurra/no-clown-fiesta.nvim',
+    disable = false,
   }
 
   -- file browsing
@@ -157,6 +160,7 @@ packer.startup(function()
     config = function()
       require("fidget").setup()
     end,
+    tag = 'legacy',
     bufread = true
   }
   -- autocompletion
@@ -170,19 +174,20 @@ packer.startup(function()
     requires = {
       { "onsails/lspkind-nvim" },
       {
-        "L3MON4D3/LuaSnip", config = function()
+        "L3MON4D3/LuaSnip",
+        config = function()
           require("nv_snippets")
         end
       },
       { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" },
-      { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
+      { "hrsh7th/cmp-buffer",       after = "nvim-cmp" },
       -- {"hrsh7th/cmp-vsnip", after = "nvim-cmp"},
       {
         "hrsh7th/cmp-nvim-lsp", -- after = "nvim-lspconfig"
       },
-      { "hrsh7th/cmp-path", after = "nvim-cmp" },
-      { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" },
-      { "hrsh7th/cmp-calc", after = "nvim-cmp" },
+      { "hrsh7th/cmp-path",           after = "nvim-cmp" },
+      { "hrsh7th/cmp-nvim-lua",       after = "nvim-cmp" },
+      { "hrsh7th/cmp-calc",           after = "nvim-cmp" },
       { "kdheepak/cmp-latex-symbols", after = "nvim-cmp" },
       -- {'tzachar/cmp-tabnine', run = './install.sh', after = "nvim-cmp"}
     },
@@ -324,12 +329,12 @@ packer.startup(function()
     end
   }
   use {
-    'TimUntersberger/neogit',
+    'NeogitOrg/neogit',
     requires = 'nvim-lua/plenary.nvim',
     event = 'BufRead',
     config = function()
       require('nv_neogit')
-    end
+    end,
   }
 
   -- fuzzy search using telescope
@@ -406,5 +411,14 @@ packer.startup(function()
       require('nv_buildme')
     end,
     disable = true,
+  }
+  -- distant.nvim
+  use {
+    'chipsenkbeil/distant.nvim',
+    branch = 'v0.3',
+    config = function()
+      require('distant'):setup()
+    end,
+    disable = true
   }
 end)

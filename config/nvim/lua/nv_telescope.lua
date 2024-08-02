@@ -40,10 +40,10 @@ require('telescope').setup {
   },
   extensions = {
     fzf = {
-      fuzzy = true, -- false will only do exact matching
+      fuzzy = true,                   -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
-      override_file_sorter = true, -- override the file sorter
-      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      override_file_sorter = true,    -- override the file sorter
+      case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
     }
   }
 }
@@ -78,11 +78,12 @@ M.edit_neorg = function()
   }
 end
 
+
 -- Mappings
-map('n', '<A-p>', ':lua require("telescope.builtin").find_files()<cr>', N)
-map('n', '<A-g>', ':lua require("telescope.builtin").git_files()<cr>', N)
-map('n', '<A-b>', ':lua require("telescope.builtin").buffers()<cr>', N)
-map('n', '<A-f>', ':lua require("telescope.builtin").grep_string()<cr>', N)
-map('n', '<A-h>', ':lua require("telescope.builtin").help_tags()<cr>', N)
+map('n', 'π', ':lua require("telescope.builtin").find_files()<cr>', N)
+map('n', '©', ':lua require("telescope.builtin").git_files()<cr>', N)
+map('n', '∫', ':lua require("telescope.builtin").buffers()<cr>', N)
+map('n', 'ƒ', ':lua require("telescope.builtin").grep_string()<cr>', N)
+map('n', '˙', ':lua require("telescope.builtin").help_tags()<cr>', N)
 
 return M

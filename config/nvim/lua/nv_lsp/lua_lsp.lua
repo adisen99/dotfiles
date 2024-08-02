@@ -12,7 +12,7 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local luals_root_path = '/home/aditya/.config/nvim/lua-ls/lua-language-server'
+local luals_root_path = '/Users/assengu/.config/nvim/lua-ls/lua-language-server'
 local luals_binary = luals_root_path .. "/bin/lua-language-server"
 
 nvim_lsp.lua_ls.setup {

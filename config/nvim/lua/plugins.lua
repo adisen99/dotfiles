@@ -28,9 +28,9 @@ packer.startup(function()
     "max397574/better-escape.nvim",
     config = function()
       require("better_escape").setup({
-        mapping = { "jk" },
+        --[[ mapping = { "jk" },
         timeout = 200,
-        keys = "<Esc>"
+        keys = "<Esc>" ]]
       })
     end,
   }

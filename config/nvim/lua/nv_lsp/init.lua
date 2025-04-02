@@ -14,7 +14,7 @@ local capabilities = require('nv_lsp.capabilities')
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 
-local servers = { "pyright", "bashls", "texlab", "vimls", "html", "cssls", "fortls", "rust_analyzer", "gopls",
+local servers = { "pylsp", "bashls", "texlab", "vimls", "html", "cssls", "fortls", "rust_analyzer", "gopls",
   "intelephense" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
@@ -22,6 +22,13 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
+      ["pylsp"] = {
+        plugins = {
+          pycodestyle = {
+            maxLineLength = 150
+          }
+        }
+      },
       ["fortls"] = {
         nthreads = 4, -- setting nthreads manually to 4
         disableDiagnostics = false,

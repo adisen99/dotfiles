@@ -35,7 +35,7 @@ require('lush')(require('codeschool').setup({
   plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer" },
   langs = { "lua", "python", "rust", "markdown", "viml", "golang" },
 })) ]]
--- Appretice
+-- Apprentice
 --[[ g.apprentice_hls_lspreference = "light4"
 g.apprentice_hls_cursor = "light4"
 g.apprentice_hls_highlight = "light4"

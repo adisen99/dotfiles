@@ -2,7 +2,7 @@
 
 local M = {}
 
-local codeshcool = {
+local codeschool = {
   white = "#fbfbfb",
   light_gray = '#555e61',
   gray = "#2e373b",

@@ -23,3 +23,5 @@ ls
 ssh gadi-cpu-bdw-0004
 exit
 /Users/assengu/.local/bin/distant ; exit;
+ssh gadi-cpu-bdw-0008
+exit

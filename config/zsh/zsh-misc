@@ -24,5 +24,20 @@ if [ -f "/Users/assengu/.miniconda/etc/profile.d/mamba.sh" ]; then
     . "/Users/assengu/.miniconda/etc/profile.d/mamba.sh"
 fi
 # <<< conda initialize <<<
+# 
+# 
+# Ruby installation homebrew default
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
 
 
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/assengu/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

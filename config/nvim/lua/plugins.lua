@@ -23,6 +23,24 @@ packer.startup(function()
     opt = true
   }
 
+  -- mason.nvim
+  use {
+    "mason-org/mason.nvim",
+    disable = true,
+    config = function()
+      require("mason").setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        },
+      }
+      )
+    end
+  }
+
   -- better-escape.nvim
   use {
     "max397574/better-escape.nvim",
@@ -143,7 +161,7 @@ packer.startup(function()
     config = function()
       require('nv_lsp')
     end,
-    event = 'VimEnter'
+    -- event = 'VimEnter'
   }
   use {
     'nvim-lua/lsp_extensions.nvim',

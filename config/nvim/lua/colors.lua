@@ -17,18 +17,19 @@ g.indent_blankline_show_trailing_blankline_indent = false ]]
 g.jellybeans_italic_boolean = true
 vim.cmd('colorscheme jellybeans-nvim') ]]
 -- Codeschool
--- g.codeschool_number_column = "bg0"
--- g.codeschool_sign_column = "bg0"
--- g.codeschool_color_column = "bg0"
--- g.codeschool_invert_selection = 1
--- g.codeschool_invert_tabline = 1
--- g.codeschool_transparent_bg = false
---[[ g.codeschool_hls_lspreference = "light4"
+--[[ g.codeschool_inverse = false
+g.codeschool_number_column = "bg0"
+g.codeschool_sign_column = "bg0"
+g.codeschool_color_column = "bg0"
+g.codeschool_invert_selection = false
+g.codeschool_invert_tabline = false
+g.codeschool_transparent_bg = false
+g.codeschool_hls_lspreference = "light4"
 g.codeschool_hls_cursor = "light4"
 g.codeschool_hls_highlight = "light4"
 g.codeschool_contrast_dark = "hard"
 g.codeschool_italicize_booleans = true
-g.codeschool_sign_column = 'dark0_hard'
+g.codeschool_sign_column = 'dark0'
 g.codeschool_tabline_sel = "fg0"
 require('lush')(require('codeschool').setup({
   -- plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer", "treesitter" },
@@ -36,14 +37,22 @@ require('lush')(require('codeschool').setup({
   langs = { "lua", "python", "rust", "markdown", "viml", "golang" },
 })) ]]
 -- Apprentice
---[[ g.apprentice_hls_lspreference = "light4"
+--[[ g.apprentice_inverse = false
+g.apprentice_number_column = "bg0"
+g.apprentice_sign_column = "bg0"
+g.apprentice_color_column = "bg0"
+g.apprentice_invert_selection = false
+g.apprentice_invert_tabline = false
+g.apprentice_transparent_bg = false
+g.apprentice_hls_lspreference = "light4"
 g.apprentice_hls_cursor = "light4"
 g.apprentice_hls_highlight = "light4"
 g.apprentice_contrast_dark = "hard"
 g.apprentice_italicize_booleans = true
+g.apprentice_sign_column = 'dark0'
 g.apprentice_tabline_sel = "fg0"
-g.apprentice_sign_column = 'dark0_hard'
 require('lush')(require('apprentice').setup({
+  -- plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer", "treesitter" },
   plugins = { "netrw", "gitsigns", "cmp", "nvimtree", "neogit", "lsp", "telescope", "packer" },
   langs = { "lua", "python", "rust", "markdown", "viml", "golang" },
 })) ]]

@@ -1,3 +1,4 @@
 web
 lua-ls/
 config/nvim/plugin
+.aider*

@@ -126,19 +126,19 @@ packer.startup(function()
     end,
   }
 
-  -- nvim-tree
+  -- neo-tree
   use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'nvim-web-devicons',
-    -- keys = {'<leader>e', '<leader>r'},
-    cmd = { 'NvimTreeToggle', 'NvimTreeRefresh', 'NvimTreeOpen' },
-    setup = function()
-      require('nv_tree').setup()
-    end,
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
     config = function()
-      require('nv_tree').config()
+      require('nv_neo_tree')
     end,
-    disable = true
+    disable = false
   }
 
   -- lir nvim
@@ -152,7 +152,7 @@ packer.startup(function()
     config = function()
       require('nv_lir')
     end,
-    disable = false
+    disable = true
   }
 
   -- nvim lsp
@@ -430,6 +430,7 @@ packer.startup(function()
     end,
     disable = true,
   }
+  -- SSH plugins
   -- distant.nvim
   use {
     'chipsenkbeil/distant.nvim',
@@ -438,5 +439,19 @@ packer.startup(function()
       require('distant'):setup()
     end,
     disable = true
+  }
+
+  -- remote-nvim
+  use {
+    "amitds1997/remote-nvim.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("remote-nvim").setup({})
+    end,
+    disable = false,
   }
 end)

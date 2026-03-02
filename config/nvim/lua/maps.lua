@@ -70,4 +70,7 @@ map('n', '<C-k>', ':cprev<cr>', N)
 map('n', 'gj', ':lnext<cr>', N)
 map('n', 'gk', ':lprev<cr>', N)
 
+-- neo-tree keymap
+map("n", "<leader>e", ":Neotree<cr>", N)
+
 return M
